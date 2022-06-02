@@ -11,6 +11,9 @@
 		},
 		{
 			"path":"pages/home/index"
+		},
+		{
+			"path":"pages/sign-in"
 		}
 	],
 	"globalStyle": {

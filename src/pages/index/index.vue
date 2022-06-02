@@ -3,7 +3,7 @@
     <image class="logo" src="/static/logo.png"></image>
     <view class="text-area">
       <text class="title">{{ title }}</text>
-      <navigator url="/pages/welcome/index" open-type="redirect">
+      <navigator url="/pages/welcome/index" open-type="redirect" style="margin-top:200rpx">
         <button class="aaa">跳转自由停页面</button>
       </navigator>
     </view>
@@ -52,7 +52,6 @@ export default {
 }
 
 .aaa {
-  top: 200rpx;
   color: #8f8f94;
   font-size: 28rpx;
 }
