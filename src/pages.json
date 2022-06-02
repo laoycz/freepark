@@ -13,7 +13,7 @@
 			"path":"pages/home/index"
 		},
 		{
-			"path":"pages/sign-in"
+			"path":"pages/park/index"
 		}
 	],
 	"globalStyle": {

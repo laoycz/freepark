@@ -1,34 +1,11 @@
 <template>
-    <view style="position: relative;background-color: #F3F6FA;height: 1624rpx;">
-        <view style="position:relative">
-            <image class="back" src="/static/home/组319.png"></image>
-            <view style="position: absolute;left: 0;right: 0; top: 0; bottom: 0;">
-                <view style="display: flex; margin-top: 66rpx;    line-height: 33rpx;">
-                    <image class="location" src="/static/home/定位.png"></image>
-                    <text style="margin-left:9rpx;color: #F8FAF9;">北京</text>
-                    <view class="search"></view>
-                    <image class="small" src="/static/home/icon-n.png"></image>
-                </view>
+    <view style="background-color:#F3F6FA; width: 750rpx; height: 1624rpx;">
+        <view>
+            <view class="header">
+                <view class="arrow"></view>
+                <text class="title">停车场</text>
             </view>
-            <view class="column">
-                <view style="position: relative;">
-                    <image class="Administration" src="/static/home/组320.png" style="margin-left:40rpx;"></image>
-                    <image class="Administration" src="/static/home/组28.png" style="margin-left:206rpx;"></image>
-                    <image class="Administration" src="/static/home/组280.png" style="margin-left:376rpx;"></image>
-                    <image class="Administration" src="/static/home/组2800.png" style="margin-left:550rpx;"></image>
-                </view>
-                <view style="position: relative;">
-                    <text class="text" style="margin-left:32rpx;">停车管理</text>
-                    <text class="text" style="margin-left:198rpx;">活动管理</text>
-                    <text class="text" style="margin-left:368rpx;">停车记录</text>
-                    <text class="text" style="margin-left:542rpx;">自助停车</text>
-                </view>
-            </view>
-        </view>
-        <view style="margin-left:32rpx;">
-            <view class="recommend">车位租聘推荐</view>
-            <view class="blue"></view>
-            <view class="border">
+            <view class="border" style="margin-top: -100rpx;">
                 <view style="display:flex;">
                     <view>
                         <view class="black">天山体育馆停车场</view>
@@ -49,8 +26,8 @@
                     <text class="aaa" style="margin-left:4rpx;">空位</text>
                 </view>
             </view>
-            <view class="border">
-                <view style="display:flex;">
+            <view class="border" style="margin-top: 24rpx;">
+                    <view style="display:flex;">
                     <view>
                         <view class="black">百货大楼停车场</view>
                         <view class="grey">北京市东城区王府井大街255号百货大楼B2</view>
@@ -70,8 +47,49 @@
                     <text class="aaa" style="margin-left:4rpx;">空位</text>
                 </view>
             </view>
-        </view>
-        <view class="end">
+            <view class="border" style="margin-top: 24rpx;">
+            <view style="display:flex;">
+                    <view>
+                        <view class="black">国家游泳中心停车场</view>
+                        <view class="grey">北京市朝阳区天辰东路11号国家游泳中心</view>
+                    </view>
+                    <view>
+                        <image class="pic" style="margin-left: 114rpx;" src="/static/home/路径.png"></image>
+                        <view class="blee" style="margin-left:102rpx;">8.7km</view>
+                    </view>
+                </view>
+                <view class="line"></view>
+                <view>
+                    <text class="number" style="margin-left:32rpx;">7:00-21:00</text>
+                    <text class="aaa" style="margin-left:4rpx;">营业</text>
+                    <text class="number" style="margin-left:100rpx;">3.0</text>
+                    <text class="aaa" style="margin-left:4rpx;">元/小时</text>
+                    <text class="number" style="margin-left:114rpx;">76</text>
+                    <text class="aaa" style="margin-left:4rpx;">空位</text>
+                </view>
+            </view>
+            <view class="border" style="margin-top: 24rpx;">
+            <view style="display:flex;">
+                    <view>
+                        <view class="black">北京奥林匹克公园P1停车场</view>
+                        <view class="grey">北京市朝阳区北辰东路15号</view>
+                    </view>
+                    <view>
+                        <image class="pic" style="margin-left: 94rpx;" src="/static/home/路径.png"></image>
+                        <view class="blee" style="margin-left:82rpx;">12.9km</view>
+                    </view>
+                </view>
+                <view class="line"></view>
+                <view>
+                    <text class="number" style="margin-left:32rpx;">0:00-24:00</text>
+                    <text class="aaa" style="margin-left:4rpx;">营业</text>
+                    <text class="number" style="margin-left:100rpx;">4.0</text>
+                    <text class="aaa" style="margin-left:4rpx;">元/小时</text>
+                    <text class="number" style="margin-left:114rpx;">839</text>
+                    <text class="aaa" style="margin-left:4rpx;">空位</text>
+                </view>
+            </view>
+             <view class="end">
             <view style="width:112rpx; height:67rpx; margin-top: 26rpx; margin-left: 48rpx;">
             <navigator url="/pages/home/index" open-type="redirect">
                 <image class="bbb" src="/static/home/组321.png"></image>
@@ -96,87 +114,32 @@
                 <view class="ccc">我的</view>
             </view>
         </view>
-        <view class="ddd"></view>
+        </view>
     </view>
-
-
 </template>
 <style>
-.back {
+.header {
     width: 750rpx;
-    height: 576rpx;
-    background-size: cover;
-
+    height: 200rpx;
+    border-radius: 0rpx 0rpx 48rpx 48rpx;
+    background: linear-gradient(76deg, #0E52E6 0%, #0E6FF3 100%);
+    padding-top: 116rpx;
+    display: flex;
 }
 
-.location {
-    width: 27rpx;
-    height: 33rpx;
-    margin-left: 32rpx;
+.arrow {
+    width: 31rpx;
+    height: 31rpx;
+    border: 3rpx solid #FFFFFF;
     opacity: 1;
-
+    margin-left: 42rpx;
 }
 
-.search {
-    width: 486rpx;
-    height: 64rpx;
-    background: #F8FAF9;
-    opacity: 0.25;
-    border-radius: 32rpx;
-    margin-left: 24rpx;
-    margin-top: -10rpx;
-}
-
-.small {
-    width: 34rpx;
-    height: 40rpx;
-    margin-left: 28rpx;
-}
-
-.column {
-    width: 686rpx;
-    height: 228rpx;
-    background: #FFFFFF;
-    border-radius: 24rpx;
-    margin-top: -100rpx;
-    opacity: 1;
-    margin-left: 32rpx;
-    position: absolute;
-    top: 603rpx;
-}
-
-.Administration {
-    width: 92rpx;
-    height: 92rpx;
-    position: absolute;
-    top: 45rpx;
-}
-
-.text {
-    width: 112rpx;
-    height: 28rpx;
-    position: absolute;
-    top: 157rpx;
-    font-size: 28rpx;
-    color: #121820;
-}
-
-.recommend {
-    width: 216rpx;
-    height: 36rpx;
-    font-size: 36rpx;
-    font-weight: bold;
-    color: #121820;
-    opacity: 1;
-    margin-top: 210rpx;
-}
-
-.blue {
-    width: 216rpx;
-    height: 16rpx;
-    background: linear-gradient(90deg, #3366FD 0%, rgba(51, 102, 253, 0) 100%);
-    border-radius: 10rpx;
-    opacity: 1;
+.title {
+    font-size: 40rpx;
+    color: #FFFFFF;
+    font-weight: 400;
+    margin-left: 242rpx;
 }
 
 .border {
@@ -184,15 +147,8 @@
     height: 276rpx;
     background-color: #FFFFFF;
     border-radius: 8rpx;
-    margin-top: 24rpx;
-}
-
-.end {
-    width: 750rpx;
-    height: 166rpx;
-    margin-top: 28rpx;
-    background-color: #FFFFFF;
-    display: flex;
+    margin-left: 32rpx;
+    opacity: 1;
 }
 
 .black {
@@ -242,6 +198,15 @@
     color: #B4BBC6;
 }
 
+
+.end {
+    width: 750rpx;
+    height: 166rpx;
+    margin-top: 82rpx;
+    background-color: #FFFFFF;
+    display: flex;
+}
+
 .bbb {
     width: 35rpx;
     height: 34rpx;
@@ -258,13 +223,5 @@
     margin-top: 16rpx;
 }
 
-.ddd {
-    width: 268rpx;
-    height: 10rpx;
-    background-color: #000000;
-    border-radius: 200rpx;
-    position: absolute;
-    left: 242rpx;
-    bottom: 14rpx;
-}
+
 </style>
