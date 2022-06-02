@@ -2,7 +2,9 @@
     <view style="background-color:#F3F6FA; width: 750rpx; height: 1624rpx;">
         <view>
             <view class="header">
-                <view class="arrow"></view>
+                <navigator url="/pages/home/index" open-type="redirect" style="width: 31rpx; height: 31rpx; padding-left: 42rpx;">
+                    <image class="arrow" src="/static/activity/返回.png"></image>
+                </navigator>
                 <text class="title">停车场</text>
             </view>
             <view class="border" style="margin-top: -100rpx;">
@@ -27,7 +29,7 @@
                 </view>
             </view>
             <view class="border" style="margin-top: 24rpx;">
-                    <view style="display:flex;">
+                <view style="display:flex;">
                     <view>
                         <view class="black">百货大楼停车场</view>
                         <view class="grey">北京市东城区王府井大街255号百货大楼B2</view>
@@ -48,7 +50,7 @@
                 </view>
             </view>
             <view class="border" style="margin-top: 24rpx;">
-            <view style="display:flex;">
+                <view style="display:flex;">
                     <view>
                         <view class="black">国家游泳中心停车场</view>
                         <view class="grey">北京市朝阳区天辰东路11号国家游泳中心</view>
@@ -69,14 +71,14 @@
                 </view>
             </view>
             <view class="border" style="margin-top: 24rpx;">
-            <view style="display:flex;">
+                <view style="display:flex;">
                     <view>
                         <view class="black">北京奥林匹克公园P1停车场</view>
                         <view class="grey">北京市朝阳区北辰东路15号</view>
                     </view>
                     <view>
-                        <image class="pic" style="margin-left: 94rpx;" src="/static/home/路径.png"></image>
-                        <view class="blee" style="margin-left:82rpx;">12.9km</view>
+                        <image class="pic" style="margin-left: 156rpx;" src="/static/home/路径.png"></image>
+                        <view class="blee" style="margin-left:144rpx;">12.9km</view>
                     </view>
                 </view>
                 <view class="line"></view>
@@ -89,31 +91,33 @@
                     <text class="aaa" style="margin-left:4rpx;">空位</text>
                 </view>
             </view>
-             <view class="end">
-            <view style="width:112rpx; height:67rpx; margin-top: 26rpx; margin-left: 48rpx;">
-            <navigator url="/pages/home/index" open-type="redirect">
-                <image class="bbb" src="/static/home/组321.png"></image>
-                <view class="ccc">首页</view>
-                </navigator>
-            </view>
+            <view class="end">
+                <view style="width:112rpx; height:67rpx; margin-top: 26rpx; margin-left: 48rpx;">
+                    <navigator url="/pages/home/index" open-type="redirect">
+                        <image class="bbb" src="/static/home/组321.png"></image>
+                        <view class="ccc">首页</view>
+                    </navigator>
+                </view>
 
 
-            <view style="width:112rpx; height:67rpx; margin-top: 26rpx; margin-left: 62rpx;">
-                <navigator url="/pages/park/index" open-type="redirect">
-                <image class="bbb" src="/static/home/停车管理.png"></image>
-                <view class="ccc">停车场</view>
-                </navigator>
-            </view>
+                <view style="width:112rpx; height:67rpx; margin-top: 26rpx; margin-left: 62rpx;">
+                    <navigator url="/pages/park/index" open-type="redirect">
+                        <image class="bbb" src="/static/home/停车管理.png"></image>
+                        <view class="ccc">停车场</view>
+                    </navigator>
+                </view>
 
-            <view style="width:112rpx; height:67rpx; margin-top: 26rpx; margin-left: 62rpx;">
-                <image class="bbb" src="/static/home/活动.png"></image>
-                <view class="ccc">活动</view>
+                <view style="width:112rpx; height:67rpx; margin-top: 26rpx; margin-left: 62rpx;">
+                    <navigator url="/pages/activity/index" open-type="redirect">
+                        <image class="bbb" src="/static/home/活动.png"></image>
+                        <view class="ccc">活动</view>
+                    </navigator>
+                </view>
+                <view style="width:112rpx; height:67rpx; margin-top: 26rpx; margin-left: 82rpx;">
+                    <image class="bbb" src="/static/home/我的.png"></image>
+                    <view class="ccc">我的</view>
+                </view>
             </view>
-            <view style="width:112rpx; height:67rpx; margin-top: 26rpx; margin-left: 82rpx;">
-                <image class="bbb" src="/static/home/我的.png"></image>
-                <view class="ccc">我的</view>
-            </view>
-        </view>
         </view>
     </view>
 </template>
@@ -130,7 +134,6 @@
 .arrow {
     width: 31rpx;
     height: 31rpx;
-    border: 3rpx solid #FFFFFF;
     opacity: 1;
     margin-left: 42rpx;
 }
@@ -222,6 +225,4 @@
     align-items: center;
     margin-top: 16rpx;
 }
-
-
 </style>

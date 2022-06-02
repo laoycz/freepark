@@ -14,6 +14,9 @@
 		},
 		{
 			"path":"pages/park/index"
+		},
+		{
+			"path":"pages/activity/index"
 		}
 	],
 	"globalStyle": {

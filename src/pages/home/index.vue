@@ -73,23 +73,25 @@
         </view>
         <view class="end">
             <view style="width:112rpx; height:67rpx; margin-top: 26rpx; margin-left: 48rpx;">
-            <navigator url="/pages/home/index" open-type="redirect">
-                <image class="bbb" src="/static/home/组321.png"></image>
-                <view class="ccc">首页</view>
+                <navigator url="/pages/home/index" open-type="redirect">
+                    <image class="bbb" src="/static/home/组321.png"></image>
+                    <view class="ccc">首页</view>
                 </navigator>
             </view>
 
 
             <view style="width:112rpx; height:67rpx; margin-top: 26rpx; margin-left: 62rpx;">
                 <navigator url="/pages/park/index" open-type="redirect">
-                <image class="bbb" src="/static/home/停车管理.png"></image>
-                <view class="ccc">停车场</view>
+                    <image class="bbb" src="/static/home/停车管理.png"></image>
+                    <view class="ccc">停车场</view>
                 </navigator>
             </view>
 
             <view style="width:112rpx; height:67rpx; margin-top: 26rpx; margin-left: 62rpx;">
-                <image class="bbb" src="/static/home/活动.png"></image>
-                <view class="ccc">活动</view>
+                <navigator url="/pages/activity/index" open-type="redirect">
+                    <image class="bbb" src="/static/home/活动.png"></image>
+                    <view class="ccc">活动</view>
+                </navigator>
             </view>
             <view style="width:112rpx; height:67rpx; margin-top: 26rpx; margin-left: 82rpx;">
                 <image class="bbb" src="/static/home/我的.png"></image>
