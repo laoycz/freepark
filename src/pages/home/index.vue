@@ -94,8 +94,10 @@
                 </navigator>
             </view>
             <view style="width:112rpx; height:67rpx; margin-top: 26rpx; margin-left: 82rpx;">
-                <image class="bbb" src="/static/home/我的.png"></image>
-                <view class="ccc">我的</view>
+                <navigator url="/pages/my/index" open-type="redirect">
+                    <image class="bbb" src="/static/home/我的.png"></image>
+                    <view class="ccc">我的</view>
+                </navigator>
             </view>
         </view>
         <view class="ddd"></view>

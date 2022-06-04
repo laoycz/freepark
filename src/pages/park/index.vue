@@ -2,7 +2,8 @@
     <view style="background-color:#F3F6FA; width: 750rpx; height: 1624rpx;">
         <view>
             <view class="header">
-                <navigator url="/pages/home/index" open-type="redirect" style="width: 31rpx; height: 31rpx; padding-left: 42rpx;">
+                <navigator url="/pages/home/index" open-type="redirect"
+                    style="width: 31rpx; height: 31rpx; padding-left: 42rpx;">
                     <image class="arrow" src="/static/activity/返回.png"></image>
                 </navigator>
                 <text class="title">停车场</text>
@@ -114,8 +115,10 @@
                     </navigator>
                 </view>
                 <view style="width:112rpx; height:67rpx; margin-top: 26rpx; margin-left: 82rpx;">
-                    <image class="bbb" src="/static/home/我的.png"></image>
-                    <view class="ccc">我的</view>
+                    <navigator url="/pages/my/index" open-type="redirect">
+                        <image class="bbb" src="/static/home/我的.png"></image>
+                        <view class="ccc">我的</view>
+                    </navigator>
                 </view>
             </view>
         </view>

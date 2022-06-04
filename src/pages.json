@@ -17,6 +17,9 @@
 		},
 		{
 			"path":"pages/activity/index"
+		},
+		{
+			"path":"pages/my/index"
 		}
 	],
 	"globalStyle": {
