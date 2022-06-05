@@ -1,30 +1,22 @@
 <template>
     <view style="background-color: #F3F6FA; width: 750rpx; height: 1624rpx;">
-        <view class="blue">
+        <view class="header">
             <view style="display:flex;padding-top: 50rpx;">
                 <navigator url="/pages/my/index" open-type="redirect">
                     <image style="width:31rpx; height:31rpx;margin-left:42rpx;" src="/static/activity/返回.png"></image>
                 </navigator>
-                <view class="white" style="font-size:40rpx; margin-left: 222rpx;">订单管理</view>
-            </view>
-            <view class="order title">
-                <navigator url="/pages/whole/index" open-type="redirect">
-                    <view>全部订单</view>
-                </navigator>
-                <view>进行中</view>
-                <navigator url="/pages/completed/index" open-type="redirect">
-                    <view>已完成</view>
-                </navigator>
+                <view class="white" style="font-size:40rpx; margin-left: 222rpx;">停车记录</view>
             </view>
         </view>
         <view>
             <view class="border" style="margin-top: -80rpx;">
                 <view style="margin-left: 32rpx;">
-                    <view>
+                    <view style="display:flex;align-items:flex-end;">
                         <text class="text">天山体育馆停车场</text>
-                        <text class="one in">进行中</text>
+                        <view class="bbb" style="margin-left: 256rpx;">5.00</view>
+                        <view class="ccc">元</view>
                     </view>
-                    <view class="grey" style="margin-top: 24rpx;">小时计费 | 京A89887</view>
+                    <view class="grey" style="margin-top: 24rpx;">北京市朝阳区天山大街387号天山体育馆</view>
                     <view style="display: flex;align-items: center;margin-top: 48rpx;">
                         <view class="circular aaa"></view>
                         <view class="grey">进场时间</view>
@@ -33,25 +25,23 @@
                     <view style="display: flex;align-items: center;margin-top: 26rpx;">
                         <view class="circular orange"></view>
                         <view class="grey">出场时间</view>
-                        <view class="date">计费中...</view>
+                        <view class="date">2022-03-28 11:02:57</view>
                     </view>
                     <view class="line"></view>
                     <view class="money">
-                        <view class="grey">预估金额</view>
-                        <view style="display:flex;align-items: center;color: #282828;">
-                            <view style="font-size: 24rpx;font-weight: 400;">￥</view>
-                            <view style="font-size: 36rpx;font-weight: bold;">5.00</view>
-                        </view>
+                        <view class="date" style="margin-left: -10rpx;">停车2小时48分</view>
+                        <view class="ddd">评分</view>
                     </view>
                 </view>
             </view>
             <view class="border" style="margin-top: 32rpx;">
                 <view style="margin-left: 32rpx;">
-                    <view>
+                    <view style="display:flex;align-items:flex-end;">
                         <text class="text">百货大楼停车场</text>
-                        <text class="in black" style="margin-left: 326rpx;">已完成</text>
+                        <view class="bbb" style=" margin-left: 266rpx;">28.00</view>
+                        <view class="ccc">元</view>
                     </view>
-                    <view class="grey" style="margin-top: 24rpx;">小时计费 | 京A89887</view>
+                    <view class="grey" style="margin-top: 24rpx;">北京市东城区王府井大街255号百货大楼B2</view>
                     <view style="display: flex;align-items: center;margin-top: 48rpx;">
                         <view class="circular aaa"></view>
                         <view class="grey">进场时间</view>
@@ -64,21 +54,19 @@
                     </view>
                     <view class="line"></view>
                     <view class="money">
-                        <view class="date" style="margin-left: -16rpx;">停车1天8小时07分</view>
-                        <view style="display:flex;align-items: center;color: #282828;">
-                            <view style="font-size: 24rpx;font-weight: 400;">￥</view>
-                            <view style="font-size: 36rpx;font-weight: bold;">28.00</view>
-                        </view>
+                        <view class="date" style="margin-left: -10rpx;">停车1天8小时07分</view>
+                        <view class="ddd">评分</view>
                     </view>
                 </view>
             </view>
             <view class="border" style="margin-top: 32rpx;">
                 <view style="margin-left: 32rpx;">
-                    <view>
+                    <view style="display:flex;align-items:flex-end;">
                         <text class="text">国家游泳中心停车场</text>
-                        <text class="in black" style="margin-left: 262rpx;">已完成</text>
+                        <view class="bbb" style="margin-left: 202rpx;">15.00</view>
+                        <view class="ccc">元</view>
                     </view>
-                    <view class="grey" style="margin-top: 24rpx;">小时计费 | 京A89887</view>
+                    <view class="grey" style="margin-top: 24rpx;">北京市朝阳区天辰东路11号国家游泳中心</view>
                     <view style="display: flex;align-items: center;margin-top: 48rpx;">
                         <view class="circular aaa"></view>
                         <view class="grey">进场时间</view>
@@ -91,11 +79,8 @@
                     </view>
                     <view class="line"></view>
                     <view class="money">
-                        <view class="date" style="margin-left: -16rpx;">停车5小时40分</view>
-                        <view style="display:flex;align-items: center;color: #282828;">
-                            <view style="font-size: 24rpx;font-weight: 400;">￥</view>
-                            <view style="font-size: 36rpx;font-weight: bold;">15.00</view>
-                        </view>
+                        <view class="date" style="margin-left: -10rpx;">停车5小时40分</view>
+                        <view class="ddd">评分</view>
                     </view>
                 </view>
             </view>
@@ -103,31 +88,16 @@
     </view>
 </template>
 <style>
-.blue {
+.header {
     width: 750rpx;
-    height: 318rpx;
+    height: 238rpx;
+    border-radius: 0px 0px 48px 48px;
     background: linear-gradient(76deg, #0E52E6 0%, #0E6FF3 100%);
-    border-radius: 0 0 48rpx 48rpx;
 }
 
 .white {
     color: #FFFFFF;
     font-weight: 400;
-}
-
-.order {
-    display: grid;
-    justify-content: space-between;
-    grid-template-columns: auto auto auto;
-    margin-left: 110rpx;
-    margin-right: 144rpx;
-    margin-top: 64rpx;
-}
-
-.title {
-    color: #FFFFFF;
-    font-size: 28rpx;
-    font-weight: bold;
 }
 
 .border {
@@ -202,5 +172,33 @@ text {
     justify-content: space-between;
     margin-top: 36rpx;
     margin-right: 32rpx;
+}
+
+.bbb {
+    font-size: 44rpx;
+    font-weight: bold;
+    color: #3366FD;
+}
+
+.ccc {
+    font-size: 24rpx;
+    font-weight: 400;
+    color: #3366FD;
+    margin-left: 4rpx;
+    margin-top: -5rpx;
+}
+
+.ddd {
+    width: 160rpx;
+    height: 56rpx;
+    background: linear-gradient(180deg, #3366FD 0%, #5DAAFE 100%);
+    box-shadow: 0px 8rpx 16rpx rgba(51, 102, 253, 0.3);
+    border-radius: 32rpx;
+    margin-top: -15rpx;
+    font-size: 24rpx;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 56rpx;
+    text-align: center;
 }
 </style>

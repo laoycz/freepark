@@ -33,7 +33,7 @@
             </view>
             <view class="part">
                 <view style="display: flex;">
-                    <navigator url="/pages/whole/index" open-type="redirect">  
+                    <navigator url="/pages/whole/index" open-type="redirect">
                         <view>
                             <image class="pic" style="margin-left:82rpx;" src="/static/slices/icon.png"></image>
                             <view class="text" style="margin-left:64rpx;">全部订单</view>
@@ -43,11 +43,12 @@
                         <image class="pic" style="margin-left:100rpx;" src="/static/slices/icon1.png"></image>
                         <view class="text" style="margin-left:92rpx;">进行中</view>
                     </view>
-                    <view>
-                        <image class="pic" style="margin-left:110rpx;" src="/static/slices/icon3.png"></image>
-                        <view class="text" style="margin-left:102rpx;">已完成</view>
-                    </view>
-
+                    <navigator url="/pages/completed/index" open-type="redirect">
+                        <view>
+                            <image class="pic" style="margin-left:110rpx;" src="/static/slices/icon3.png"></image>
+                            <view class="text" style="margin-left:102rpx;">已完成</view>
+                        </view>
+                    </navigator>
                     <view>
                         <image class="pic" style="margin-left:110rpx;" src="/static/slices/icon2.png"></image>
                         <view class="text" style="margin-left:104rpx;">待评价</view>
