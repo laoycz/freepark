@@ -33,10 +33,12 @@
             </view>
             <view class="part">
                 <view style="display: flex;">
-                    <view>
-                        <image class="pic" style="margin-left:82rpx;" src="/static/slices/icon.png"></image>
-                        <view class="text" style="margin-left:64rpx;">全部订单</view>
-                    </view>
+                    <navigator url="/pages/whole/index" open-type="redirect">  
+                        <view>
+                            <image class="pic" style="margin-left:82rpx;" src="/static/slices/icon.png"></image>
+                            <view class="text" style="margin-left:64rpx;">全部订单</view>
+                        </view>
+                    </navigator>
                     <view>
                         <image class="pic" style="margin-left:100rpx;" src="/static/slices/icon1.png"></image>
                         <view class="text" style="margin-left:92rpx;">进行中</view>
@@ -89,19 +91,22 @@
                         <view style="display: flex;margin-top: 40rpx;">
                             <image class="small" src="/static/slices/icon6.png"></image>
                             <view class="eee">账号管理</view>
-                            <image style="width:21rpx; height:21rpx; margin-left:422rpx;" src="/static/slices/联合.png"></image>
+                            <image style="width:21rpx; height:21rpx; margin-left:422rpx;" src="/static/slices/联合.png">
+                            </image>
                         </view>
                         <view class="six"></view>
                         <view style="display: flex;margin-top: 40rpx;">
                             <image class="small" src="/static/slices/icon7.png"></image>
                             <view class="eee">投诉建议</view>
-                            <image style="width:21rpx; height:21rpx; margin-left:422rpx;" src="/static/slices/联合.png"></image>
+                            <image style="width:21rpx; height:21rpx; margin-left:422rpx;" src="/static/slices/联合.png">
+                            </image>
                         </view>
                         <view class="six"></view>
                         <view style="display: flex;margin-top: 40rpx;">
                             <image class="small" src="/static/slices/版本更新.png"></image>
                             <view class="eee">版本更新</view>
-                            <view style="font-size: 28rpx; font-weight: 400;color: #B4BBC6;margin-left: 360rpx;">v1.0.2</view>
+                            <view style="font-size: 28rpx; font-weight: 400;color: #B4BBC6;margin-left: 360rpx;">v1.0.2
+                            </view>
                         </view>
                         <view class="six"></view>
                     </view>
@@ -205,7 +210,7 @@
     width: 26rpx;
     height: 28rpx;
     margin-left: 38rpx;
-/* margin-top: 40rpx; */
+    /* margin-top: 40rpx; */
 }
 
 .eee {

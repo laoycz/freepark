@@ -20,6 +20,9 @@
 		},
 		{
 			"path":"pages/my/index"
+		},
+		{
+			"path":"pages/whole/index"
 		}
 	],
 	"globalStyle": {
