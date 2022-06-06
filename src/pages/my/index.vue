@@ -3,144 +3,127 @@
         <view style="position:relative;">
             <view>
                 <image class="header" src="/static/slices/bg.png"></image>
-                <view style="position:absolute; display: flex; left: 32rpx; top:136rpx;">
+                <view class="ddd">
                     <image class="portrait" src="/static/slices/img.png"></image>
                     <view>
-                        <view style="display:flex; margin-left: 48rpx;margin-top: 18rpx;">
-                            <view style="color:#FFFFFF;font-size:40rpx;font-weight:bold;">秋名山车神</view>
-                            <image style="width:25rpx; height:30rpx; margin-left: 8rpx;" src="/static/slices/icon5.png">
-                            </image>
+                        <view class="aa">
+                            <view>秋名山车神</view>
+                            <image src="/static/slices/icon5.png"></image>
                         </view>
-                        <view
-                            style="color:#FFFFFF;font-size:26rpx; font-weight:400; margin-top: 20rpx; margin-left: 48rpx;">
-                            账号:153003289702</view>
+                        <view class="bb">账号:153003289702</view>
                     </view>
-                    <image style="  width: 40rpx; height: 38rpx; margin-left: 218rpx; margin-top: 18rpx;"
-                        src="/static/slices/icon9.png"></image>
+                    <image class="cc" src="/static/slices/icon9.png"></image>
                 </view>
-                <view style="position:absolute;top: 325rpx;left: 32rpx;">
-                    <image style="width:686rpx; height: 368rpx; position: relative;" src="/static/slices/bg1.png">
-                    </image>
-                    <view style="position:absolute;top:50rpx; left: 32rpx;">
-                        <view style="font-size:24rpx;color:#FFFFFF;font-weight:400;">可用余额(元)</view>
+                <view class="dd">
+                    <image src="/static/slices/bg1.png"></image>
+                    <view class="ee">
+                        <view class="ff">可用余额(元)</view>
                         <view style="display:flex;">
-                            <view style="font-size:56rpx; font-weight:400;color:#FFFFFF;margin-top:16rpx;">1,392.80
-                            </view>
+                            <view class="gg">1,392.80</view>
                             <view class="bottom">充值</view>
                         </view>
                     </view>
                 </view>
             </view>
             <view class="part">
-                <view style="display: flex;">
+                <view class="hh">
                     <navigator url="/pages/whole/index" open-type="redirect">
                         <view>
-                            <image class="pic" style="margin-left:82rpx;" src="/static/slices/icon.png"></image>
-                            <view class="text" style="margin-left:64rpx;">全部订单</view>
+                            <image class="pic" src="/static/slices/icon.png"></image>
+                            <text>全部订单</text>
                         </view>
                     </navigator>
                     <view>
-                        <image class="pic" style="margin-left:100rpx;" src="/static/slices/icon1.png"></image>
-                        <view class="text" style="margin-left:92rpx;">进行中</view>
+                        <image class="pic" src="/static/slices/icon1.png"></image>
+                        <text>进行中</text>
                     </view>
                     <navigator url="/pages/completed/index" open-type="redirect">
                         <view>
-                            <image class="pic" style="margin-left:110rpx;" src="/static/slices/icon3.png"></image>
-                            <view class="text" style="margin-left:102rpx;">已完成</view>
+                            <image class="pic" src="/static/slices/icon3.png"></image>
+                            <text>已完成</text>
                         </view>
                     </navigator>
                     <view>
-                        <image class="pic" style="margin-left:110rpx;" src="/static/slices/icon2.png"></image>
-                        <view class="text" style="margin-left:104rpx;">待评价</view>
+                        <image class="pic" src="/static/slices/icon2.png"></image>
+                        <text>待评价</text>
                     </view>
                 </view>
                 <view style="margin-left:32rpx; ">
-                    <view style="font-size:36rpx; font-weight:bold;color:#121820;margin-top:64rpx;">服务管理</view>
-                    <view
-                        style="width:144rpx; height:16rpx;background: linear-gradient(90deg, #3366FD 0%, rgba(51, 102, 253, 0) 100%);border-radius:10rpx;">
-                    </view>
-                    <view
-                        style="width:686rpx;height:156rpx;background-color:#FFFFFF;border-radius:24rpx;margin-top: 32rpx;">
-                        <view style="display:flex;">
+                    <view class="ii">服务管理</view>
+                    <view class="jj"></view>
+                    <view class="kk">
+                        <view class="ll">
                             <view>
-                                <image class="zzz" style="margin-left:54rpx;" src="/static/slices/地址管理.png"></image>
-                                <view class="ooo" style="margin-left:32rpx;">地址管理</view>
+                                <image class="zzz" src="/static/slices/地址管理.png"></image>
+                                <text>地址管理</text>
                             </view>
                             <view>
-                                <image class="zzz" style="margin-left:108rpx;" src="/static/slices/团队收益.png"></image>
-                                <view class="ooo" style="margin-left:80rpx;">支付管理</view>
+                                <image class="zzz" src="/static/slices/团队收益.png"></image>
+                                <text>支付管理</text>
                             </view>
                             <view>
-                                <image class="zzz" style="margin-left:99rpx;" src="/static/slices/活动中心.png"></image>
-                                <view class="ooo" style="margin-left:78rpx;">活动中心</view>
+                                <image class="zzz" src="/static/slices/活动中心.png"></image>
+                                <text>活动中心</text>
                             </view>
                             <view>
-                                <image class="zzz" style="margin-left:105rpx;" src="/static/slices/证照信息.png"></image>
-                                <view class="ooo" style="margin-left:80rpx;">证照信息</view>
+                                <image class="zzz" src="/static/slices/证照信息.png"></image>
+                                <text>证照信息</text>
                             </view>
                         </view>
                     </view>
-                    <view
-                        style="width:686rpx;height: 480rpx;background-color: #FFFFFF;border-radius: 24rpx;margin-top: 40rpx;padding-top: 48rpx;">
+                    <view class="mm">
                         <view style="display: flex;">
                             <image class="small" src="/static/slices/客服.png"></image>
                             <view class="eee">我的客服</view>
-                            <image style="width:21rpx; height:21rpx; margin-left:422rpx;" src="/static/slices/联合.png">
-                            </image>
+                            <image class="nn" src="/static/slices/联合.png"></image>
                         </view>
                         <view class="six"></view>
                         <view style="display: flex;margin-top: 40rpx;">
                             <image class="small" src="/static/slices/icon6.png"></image>
                             <view class="eee">账号管理</view>
-                            <image style="width:21rpx; height:21rpx; margin-left:422rpx;" src="/static/slices/联合.png">
-                            </image>
+                            <image class="nn" src="/static/slices/联合.png"></image>
                         </view>
                         <view class="six"></view>
                         <view style="display: flex;margin-top: 40rpx;">
                             <image class="small" src="/static/slices/icon7.png"></image>
                             <view class="eee">投诉建议</view>
-                            <image style="width:21rpx; height:21rpx; margin-left:422rpx;" src="/static/slices/联合.png">
-                            </image>
+                            <image class="nn" src="/static/slices/联合.png"></image>
                         </view>
                         <view class="six"></view>
                         <view style="display: flex;margin-top: 40rpx;">
                             <image class="small" src="/static/slices/版本更新.png"></image>
                             <view class="eee">版本更新</view>
-                            <view style="font-size: 28rpx; font-weight: 400;color: #B4BBC6;margin-left: 360rpx;">v1.0.2
-                            </view>
+                            <view class="oo">v1.0.2</view>
                         </view>
                         <view class="six"></view>
                     </view>
                 </view>
                 <view class="end">
-                    <view style="width:112rpx; height:67rpx; margin-top: 26rpx; margin-left: 48rpx;">
-                        <navigator url="/pages/home/index" open-type="redirect">
-                            <image class="bbb" src="/static/home/组321.png"></image>
-                            <view class="ccc">首页</view>
-                        </navigator>
-                    </view>
-
-
-                    <view style="width:112rpx; height:67rpx; margin-top: 26rpx; margin-left: 62rpx;">
-                        <navigator url="/pages/park/index" open-type="redirect">
-                            <image class="bbb" src="/static/home/停车管理.png"></image>
-                            <view class="ccc">停车场</view>
-                        </navigator>
-                    </view>
-
-                    <view style="width:112rpx; height:67rpx; margin-top: 26rpx; margin-left: 62rpx;">
-                        <navigator url="/pages/activity/index" open-type="redirect">
-                            <image class="bbb" src="/static/home/活动.png"></image>
-                            <view class="ccc">活动</view>
-                        </navigator>
-                    </view>
-                    <view style="width:112rpx; height:67rpx; margin-top: 26rpx; margin-left: 82rpx;">
-                        <navigator url="/pages/my/index" open-type="redirect">
-                            <image class="bbb" src="/static/home/我的.png"></image>
-                            <view class="ccc">我的</view>
-                        </navigator>
-                    </view>
-                </view>
+            <view class="endd" style="margin-left: 48rpx;">
+                <navigator url="/pages/home/index" open-type="redirect">
+                    <image src="/static/组3180.png"></image>
+                    <view>首页</view>
+                </navigator>
+            </view>
+            <view class="endd" style="margin-left: 62rpx;">
+                <navigator url="/pages/park/index" open-type="redirect">
+                    <image src="/static/home/停车管理.png"></image>
+                    <view>停车场</view>
+                </navigator>
+            </view>
+            <view class="endd" style="margin-left: 62rpx;">
+                <navigator url="/pages/activity/index" open-type="redirect">
+                    <image src="/static/home/活动.png"></image>
+                    <view>活动</view>
+                </navigator>
+            </view>
+            <view class="endd" style="margin-left: 82rpx;">
+                <navigator url="/pages/my/index" open-type="redirect">
+                    <image src="/static/我的.png"></image>
+                    <view style="color: #3366FD;">我的</view>
+                </navigator>
+            </view>
+        </view>
             </view>
         </view>
     </view>
@@ -150,6 +133,77 @@
     width: 100%;
     height: 552rpx;
     position: relative;
+}
+
+.ddd {
+    position: absolute;
+    display: flex;
+    left: 32rpx;
+    top: 136rpx;
+}
+
+.aa {
+    display: flex;
+    margin-left: 48rpx;
+    margin-top: 18rpx;
+}
+
+.aa view {
+    color: #FFFFFF;
+    font-size: 40rpx;
+    font-weight: bold;
+}
+
+.aa image {
+    width: 25rpx;
+    height: 30rpx;
+    margin-left: 8rpx;
+}
+
+.bb {
+    color: #FFFFFF;
+    font-size: 26rpx;
+    font-weight: 400;
+    margin-top: 20rpx;
+    margin-left: 48rpx;
+}
+
+.cc {
+    width: 40rpx;
+    height: 38rpx;
+    margin-left: 218rpx;
+    margin-top: 18rpx;
+}
+
+.dd {
+    position: absolute;
+    top: 325rpx;
+    left: 32rpx;
+}
+
+.dd image {
+    width: 686rpx;
+    height: 368rpx;
+    position: relative;
+}
+
+.ee {
+    position: absolute;
+    top: 50rpx;
+    left: 32rpx;
+}
+
+.ff {
+    font-size: 24rpx;
+    color: #FFFFFF;
+    font-weight: 400;
+}
+
+.gg {
+    font-size: 56rpx;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin-top: 16rpx;
 }
 
 .portrait {
@@ -181,37 +235,98 @@
     top: 520rpx;
 }
 
+.hh {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    margin: 48rpx 78rpx 0 82rpx;
+    gap: 90rpx;
+}
+
+.hh view {
+    display: grid;
+}
+
 .pic {
     width: 58rpx;
     height: 66rpx;
-    margin-top: 78rpx;
+    margin: 0 0 22rpx 10rpx;
 }
 
-.text {
+text {
     font-size: 24rpx;
     font-weight: 400;
     color: #282828;
-    margin-top: 22rpx;
+}
+
+.ii {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #121820;
+    margin-top: 64rpx;
+}
+
+.jj {
+    width: 144rpx;
+    height: 16rpx;
+    background: linear-gradient(90deg, #3366FD 0%, rgba(51, 102, 253, 0) 100%);
+    border-radius: 10rpx;
+    margin-top: -15rpx;
+}
+
+.kk {
+    width: 686rpx;
+    height: 156rpx;
+    background-color: #FFFFFF;
+    border-radius: 24rpx;
+    margin-top: 32rpx;
+    padding-top: 35rpx;
+}
+
+.ll {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    margin: 0 32rpx 0 32rpx;
+    gap: 80rpx;
+}
+
+.ll view {
+    display: grid;
 }
 
 .zzz {
     width: 53rpx;
     height: 48rpx;
-    margin-top: 28rpx;
+    margin: 0 0 28rpx 23rpx;
 }
 
-.ooo {
-    font-size: 24rpx;
-    color: #282828;
+.mm {
+    width: 686rpx;
+    height: 480rpx;
+    background-color: #FFFFFF;
+    border-radius: 24rpx;
+    margin-top: 40rpx;
+    padding-top: 48rpx;
+}
+
+.nn {
+    width: 21rpx;
+    height: 21rpx;
+    margin-left: 422rpx;
+}
+
+.oo {
+    font-size: 28rpx;
     font-weight: 400;
-    margin-top: 24rpx;
+    color: #B4BBC6;
+    margin-left: 360rpx;
 }
 
 .small {
     width: 26rpx;
     height: 28rpx;
     margin-left: 38rpx;
-    /* margin-top: 40rpx; */
 }
 
 .eee {
@@ -223,7 +338,7 @@
 
 .six {
     border: 2rpx solid #F2F3F6;
-    width: 622RPX;
+    width: 622rpx;
     height: 0;
     margin-left: 32rpx;
     margin-top: 40rpx;
@@ -237,13 +352,13 @@
     display: flex;
 }
 
-.bbb {
+.endd image {
     width: 35rpx;
     height: 34rpx;
     margin-left: 39rpx;
 }
 
-.ccc {
+.endd view {
     font-size: 20rpx;
     color: #121820;
     display: flex;
@@ -251,5 +366,11 @@
     justify-content: center;
     align-items: center;
     margin-top: 16rpx;
+}
+
+.endd {
+    width: 112rpx;
+    height: 67rpx;
+    margin-top: 26rpx;
 }
 </style>

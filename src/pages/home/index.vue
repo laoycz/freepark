@@ -11,17 +11,23 @@
                 </view>
             </view>
             <view class="column">
-                <view style="position: relative;">
-                    <image class="Administration" src="/static/home/组320.png" style="margin-left:40rpx;"></image>
-                    <image class="Administration" src="/static/home/组28.png" style="margin-left:206rpx;"></image>
-                    <image class="Administration" src="/static/home/组280.png" style="margin-left:376rpx;"></image>
-                    <image class="Administration" src="/static/home/组2800.png" style="margin-left:550rpx;"></image>
-                </view>
-                <view style="position: relative;">
-                    <text class="text" style="margin-left:32rpx;">停车管理</text>
-                    <text class="text" style="margin-left:198rpx;">活动管理</text>
-                    <text class="text" style="margin-left:368rpx;">停车记录</text>
-                    <text class="text" style="margin-left:542rpx;">自助停车</text>
+                <view class="center">
+                    <view>
+                        <image class="Administration" src="/static/home/组320.png"></image>
+                        <view class="text">停车管理</view>
+                    </view>
+                    <view>
+                        <image class="Administration" src="/static/home/组28.png"></image>
+                        <view class="text">活动管理</view>
+                    </view>
+                    <view>
+                        <image class="Administration" src="/static/home/组280.png"></image>
+                        <view class="text">停车记录</view>
+                    </view>
+                    <view>
+                        <image class="Administration" src="/static/home/组2800.png"></image>
+                        <view class="text">自助停车</view>
+                    </view>
                 </view>
             </view>
         </view>
@@ -42,11 +48,11 @@
                 <view class="line"></view>
                 <view>
                     <text class="number" style="margin-left:32rpx;">7:00-22:00</text>
-                    <text class="aaa" style="margin-left:4rpx;">营业</text>
+                    <text class="aaa ccc">营业</text>
                     <text class="number" style="margin-left:100rpx;">5.0</text>
-                    <text class="aaa" style="margin-left:4 rpx;">元/小时</text>
+                    <text class="aaa ccc">元/小时</text>
                     <text class="number" style="margin-left:98rpx;">1274</text>
-                    <text class="aaa" style="margin-left:4rpx;">空位</text>
+                    <text class="aaa ccc">空位</text>
                 </view>
             </view>
             <view class="border">
@@ -63,40 +69,37 @@
                 <view class="line"></view>
                 <view>
                     <text class="number" style="margin-left:32rpx;">7:00-24:00</text>
-                    <text class="aaa" style="margin-left:4rpx;">营业</text>
+                    <text class="aaa ccc">营业</text>
                     <text class="number" style="margin-left:100rpx;">8.0</text>
-                    <text class="aaa" style="margin-left:4rpx;">元/小时</text>
+                    <text class="aaa ccc">元/小时</text>
                     <text class="number" style="margin-left:114rpx;">152</text>
-                    <text class="aaa" style="margin-left:4rpx;">空位</text>
+                    <text class="aaa ccc">空位</text>
                 </view>
             </view>
         </view>
         <view class="end">
-            <view style="width:112rpx; height:67rpx; margin-top: 26rpx; margin-left: 48rpx;">
+            <view class="endd" style="margin-left: 48rpx;">
                 <navigator url="/pages/home/index" open-type="redirect">
-                    <image class="bbb" src="/static/home/组321.png"></image>
-                    <view class="ccc">首页</view>
+                    <image src="/static/home/组321.png"></image>
+                    <view style="color: #3366FD;">首页</view>
                 </navigator>
             </view>
-
-
-            <view style="width:112rpx; height:67rpx; margin-top: 26rpx; margin-left: 62rpx;">
+            <view class="endd" style="margin-left: 62rpx;">
                 <navigator url="/pages/park/index" open-type="redirect">
-                    <image class="bbb" src="/static/home/停车管理.png"></image>
-                    <view class="ccc">停车场</view>
+                    <image src="/static/home/停车管理.png"></image>
+                    <view>停车场</view>
                 </navigator>
             </view>
-
-            <view style="width:112rpx; height:67rpx; margin-top: 26rpx; margin-left: 62rpx;">
+            <view class="endd" style="margin-left: 62rpx;">
                 <navigator url="/pages/activity/index" open-type="redirect">
-                    <image class="bbb" src="/static/home/活动.png"></image>
-                    <view class="ccc">活动</view>
+                    <image src="/static/home/活动.png"></image>
+                    <view>活动</view>
                 </navigator>
             </view>
-            <view style="width:112rpx; height:67rpx; margin-top: 26rpx; margin-left: 82rpx;">
+            <view class="endd" style="margin-left: 82rpx;">
                 <navigator url="/pages/my/index" open-type="redirect">
-                    <image class="bbb" src="/static/home/我的.png"></image>
-                    <view class="ccc">我的</view>
+                    <image src="/static/home/我的.png"></image>
+                    <view>我的</view>
                 </navigator>
             </view>
         </view>
@@ -149,20 +152,23 @@
     top: 603rpx;
 }
 
+.center {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    gap: 50rpx;
+    margin: 40rpx 44rpx 0 40rpx;
+}
+
 .Administration {
     width: 92rpx;
     height: 92rpx;
-    position: absolute;
-    top: 45rpx;
 }
 
 .text {
-    width: 112rpx;
-    height: 28rpx;
-    position: absolute;
-    top: 157rpx;
     font-size: 28rpx;
     color: #121820;
+    margin-top: 28rpx;
 }
 
 .recommend {
@@ -199,6 +205,12 @@
     display: flex;
 }
 
+.endd {
+    width: 112rpx;
+    height: 67rpx;
+    margin-top: 26rpx;
+}
+
 .black {
     font-size: 32rpx;
     font-weight: bold;
@@ -230,8 +242,7 @@
     width: 622rpx;
     border: 2rpx solid #465A88;
     opacity: 0.06;
-    margin-top: 44rpx;
-    margin-left: 34rpx;
+    margin: 44rpx 0 15rpx 34rpx;
 }
 
 .number {
@@ -246,13 +257,17 @@
     color: #B4BBC6;
 }
 
-.bbb {
+.ccc {
+margin-left:4rpx;
+}
+
+.endd image {
     width: 35rpx;
     height: 34rpx;
     margin-left: 39rpx;
 }
 
-.ccc {
+.endd view {
     font-size: 20rpx;
     color: #121820;
     display: flex;

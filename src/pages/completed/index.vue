@@ -11,7 +11,7 @@
         <view>
             <view class="border" style="margin-top: -80rpx;">
                 <view style="margin-left: 32rpx;">
-                    <view style="display:flex;align-items:flex-end;">
+                    <view style="display:flex;align-items:center;">
                         <text class="text">天山体育馆停车场</text>
                         <view class="bbb" style="margin-left: 256rpx;">5.00</view>
                         <view class="ccc">元</view>
@@ -102,7 +102,7 @@
 
 .border {
     width: 686rpx;
-    height: 386rpx;
+    height: 396rpx;
     background-color: #FFFFFF;
     border-radius: 24rpx;
     padding-top: 48rpx;

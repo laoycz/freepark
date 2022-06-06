@@ -1,11 +1,11 @@
 <template>
     <view style="background-color: #F3F6FA; width: 750rpx; height: 1624rpx;">
         <view class="blue">
-            <view style="display:flex;padding-top: 50rpx;">
+            <view class="aa">
                 <navigator url="/pages/my/index" open-type="redirect">
-                    <image style="width:31rpx; height:31rpx;margin-left:42rpx;" src="/static/activity/返回.png"></image>
+                    <image src="/static/activity/返回.png"></image>
                 </navigator>
-                <view class="white" style="font-size:40rpx; margin-left: 222rpx;">订单管理</view>
+                <view>订单管理</view>
             </view>
             <view class="order title">
                 <navigator url="/pages/whole/index" open-type="redirect">
@@ -36,11 +36,11 @@
                         <view class="date">计费中...</view>
                     </view>
                     <view class="line"></view>
-                    <view class="money">
+                    <view style="display:flex; margin: 32rpx 0 0 5rpx;">
                         <view class="grey">预估金额</view>
-                        <view style="display:flex;align-items: center;color: #282828;">
-                            <view style="font-size: 24rpx;font-weight: 400;">￥</view>
-                            <view style="font-size: 36rpx;font-weight: bold;">5.00</view>
+                        <view class="bb" style="margin-left: 425rpx;">
+                            <view>￥</view>
+                            <text>5.00</text>
                         </view>
                     </view>
                 </view>
@@ -63,11 +63,11 @@
                         <view class="date">2022-03-26 15:42:26</view>
                     </view>
                     <view class="line"></view>
-                    <view class="money">
+                    <view style="display:flex; margin: 32rpx 0 0 5rpx;">
                         <view class="date" style="margin-left: -16rpx;">停车1天8小时07分</view>
-                        <view style="display:flex;align-items: center;color: #282828;">
-                            <view style="font-size: 24rpx;font-weight: 400;">￥</view>
-                            <view style="font-size: 36rpx;font-weight: bold;">28.00</view>
+                        <view class="bb" style="margin-left: 318rpx;">
+                            <view>￥</view>
+                            <text>28.00</text>
                         </view>
                     </view>
                 </view>
@@ -90,11 +90,11 @@
                         <view class="date">2022-03-19 17:58:41</view>
                     </view>
                     <view class="line"></view>
-                    <view class="money">
+                    <view style="display:flex; margin: 32rpx 0 0 5rpx;">
                         <view class="date" style="margin-left: -16rpx;">停车5小时40分</view>
-                        <view style="display:flex;align-items: center;color: #282828;">
-                            <view style="font-size: 24rpx;font-weight: 400;">￥</view>
-                            <view style="font-size: 36rpx;font-weight: bold;">15.00</view>
+                        <view class="bb" style="margin-left: 356rpx;">
+                            <view>￥</view>
+                            <text>15.00</text>
                         </view>
                     </view>
                 </view>
@@ -110,9 +110,22 @@
     border-radius: 0 0 48rpx 48rpx;
 }
 
-.white {
+.aa {
+    display: flex;
+    padding-top: 50rpx;
+}
+
+.aa image {
+    width: 31rpx;
+    height: 31rpx;
+    margin-left: 42rpx;
+}
+
+.aa view {
     color: #FFFFFF;
     font-weight: 400;
+    font-size: 40rpx;
+    margin-left: 222rpx;
 }
 
 .order {
@@ -163,6 +176,24 @@ text {
     font-size: 24rpx;
     font-weight: 400;
     color: #B4BBC6;
+    
+}
+
+.bb {
+    display: flex;
+    align-items: center;
+    color: #282828;
+   
+}
+
+.bb view {
+    font-size: 24rpx;
+    font-weight: 400;
+}
+
+.bb text {
+    font-size: 36rpx;
+    font-weight: bold;
 }
 
 .circular {
