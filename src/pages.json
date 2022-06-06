@@ -26,6 +26,9 @@
 		},
 		{
 			"path":"pages/completed/index"
+		},
+		{
+			"path":"pages/sign/index"
 		}
 	],
 	"globalStyle": {
