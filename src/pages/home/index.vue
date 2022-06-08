@@ -11,23 +11,15 @@
                 </view>
             </view>
             <view class="column">
-                <view class="center">
-                    <view>
-                        <image class="Administration" src="/static/home/组320.png"></image>
-                        <view class="text">停车管理</view>
-                    </view>
-                    <view>
-                        <image class="Administration" src="/static/home/组28.png"></image>
-                        <view class="text">活动管理</view>
-                    </view>
-                    <view>
-                        <image class="Administration" src="/static/home/组280.png"></image>
-                        <view class="text">停车记录</view>
-                    </view>
-                    <view>
-                        <image class="Administration" src="/static/home/组2800.png"></image>
-                        <view class="text">自助停车</view>
-                    </view>
+                <view class="center" style="display: grid; grid-auto-flow: column; grid-template-rows: auto auto;">
+                    <image class="Administration" src="/static/home/组320.png"></image>
+                    <view class="text">停车管理</view>
+                    <image class="Administration" src="/static/home/组28.png"></image>
+                    <view class="text">活动管理</view>
+                    <image class="Administration" src="/static/home/组280.png"></image>
+                    <view class="text">停车记录</view>
+                    <image class="Administration" src="/static/home/组2800.png"></image>
+                    <view class="text">自助停车</view>
                 </view>
             </view>
         </view>
@@ -103,7 +95,6 @@
                 </navigator>
             </view>
         </view>
-        <view class="ddd"></view>
     </view>
 
 
@@ -156,8 +147,10 @@
     display: grid;
     grid-template-columns: auto auto auto auto;
     justify-content: center;
-    gap: 50rpx;
+    column-gap: 50rpx;
+    row-gap: 25rpx;
     margin: 40rpx 44rpx 0 40rpx;
+    justify-items: center;
 }
 
 .Administration {
@@ -168,7 +161,6 @@
 .text {
     font-size: 28rpx;
     color: #121820;
-    margin-top: 28rpx;
 }
 
 .recommend {
@@ -258,7 +250,7 @@
 }
 
 .ccc {
-margin-left:4rpx;
+    margin-left: 4rpx;
 }
 
 .endd image {
@@ -275,15 +267,5 @@ margin-left:4rpx;
     justify-content: center;
     align-items: center;
     margin-top: 16rpx;
-}
-
-.ddd {
-    width: 268rpx;
-    height: 10rpx;
-    background-color: #000000;
-    border-radius: 200rpx;
-    position: absolute;
-    left: 242rpx;
-    bottom: 14rpx;
 }
 </style>
