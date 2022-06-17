@@ -14,4 +14,8 @@ export default {
 
 <style>
 /*每个页面公共css */
+.end {
+  position: fixed;
+  bottom: 0;
+}
 </style>

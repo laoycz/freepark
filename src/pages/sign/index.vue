@@ -1,36 +1,80 @@
 <template>
     <view class="body">
-        <view class="header" style="margin: 46rpx 32rpx 122rpx 32rpx;">
+        <view class="header" style="padding: 46rpx 32rpx 122rpx 0">
             <image style="width: 34rpx; height: 34rpx;" src="/static/sign/close.png "></image>
-            <view style="font-size: 28rpx; font-weight: 400; color: #121820;">去注册</view>
         </view>
-        <view style="margin-left: 78rpx;">
+        <view>
             <view class="welcome">早上好，</view>
             <view class="welcome" style="margin: 36rpx 0 120rpx 0;">欢迎登录自由停</view>
-            <view class="phine">手机号码</view>
-            <view class="input">请输入您的手机号码</view>
-            <view class="line"></view>
-            <view class="phine" style="margin-top: 62rpx;">验证码</view>
-            <view class="header" style="margin-right: 90rpx;">
-                <view class="input">请输入您收到的短信验证码</view>
-                <view class="obtain">获取验证码</view>
+            <view class="uni-form-item uni-column">
+                <view>手机号码</view>
+                <input v-model="phone" class="uni-input" focus placeholder="请输入您的手机号码" />
             </view>
-            <view class="line"></view>
+            <view class="uni-form-item uni-column">
+                <view>昵称</view>
+                <input v-model="name" type="nickname" class="uni-input" placeholder="请输入您的昵称" />
+            </view>
+
         </view>
-        <view class="sign">登录</view>
+        <button @click="onRegister" class="sign">注册</button>
         <view class="center">
             <image class="picture" src="/static/sign/qq.png"></image>
-            <image class="picture" src="/static/sign/wechat.png"></image>
+            <button open-type="getPhoneNumber" @getphonenumber="getPhoneNumber">
+                <image class="picture" src="/static/sign/wechat.png"></image>
+            </button>
             <image class="picture" src="/static/sign/micro.png"></image>
         </view>
         <view class="end">注册代表你已阅读并同意《用户协议》和《隐私协议》</view>
     </view>
 </template>
+
+<script>
+
+export default {
+    data() {
+        return { phone: "", name: "" }
+    },
+    methods: {
+        onRegister() {
+            wx.login({
+                success: ({ code }) => {
+                    wx.request({
+                        url: "https://freepark.ntmkinc.cn/users/register",
+                        data: {
+                            user: {
+                                phone: this.phone,
+                                name: this.name
+                            },
+                            code: code
+                        },
+                        method: "POST",
+                        success: ({ data: { token } }) => {
+                            wx.setStorageSync("token", token)
+                        }
+                    })
+                }
+            })
+        }
+    }
+
+}
+
+// wx.request({ url: "https://freepark.ntmkinc.cn/user", header: { Authorization: "Bearer " + wx.getStorageSync('token') }, success: console.log})
+</script>
+
 <style>
 .body {
-    width: 750rpx;
-    height: 1562rpx;
+    background-color: #F3F6FA;
+    position: relative;
+    padding: 0 84rpx;
+}
+
+.uni-input {
     background-color: #FFFFFF;
+    padding: 15rpx 30rpx;
+    margin: 20rpx 0;
+    border-radius: 15rpx;
+    font-size: 24rpx;
 }
 
 .header {
@@ -47,12 +91,12 @@
 }
 
 .phine {
-    font-size: 28rpx;
+    font-size: 32rpx;
     font-weight: bold;
     color: #121820;
 }
 
-.input {
+input {
     font-size: 24rpx;
     font-weight: 400;
     color: #B4BBC6;
@@ -80,7 +124,6 @@
     box-shadow: 0px 12rpx 24rpx rgba(51, 102, 253, 0.3);
     border-radius: 50rpx;
     margin-top: 100rpx;
-    margin-left: 86rpx;
     line-height: 100rpx;
     text-align: center;
     font-size: 36rpx;
