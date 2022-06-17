@@ -16,7 +16,9 @@
             </view>
 
         </view>
+        <navigator url="/pages/my/index" open-type="redirect">
         <button @click="onRegister" class="sign">注册</button>
+        </navigator>
         <view class="center">
             <image class="picture" src="/static/sign/qq.png"></image>
             <button open-type="getPhoneNumber" @getphonenumber="getPhoneNumber">

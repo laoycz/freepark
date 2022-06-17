@@ -7,10 +7,10 @@
                     <image class="portrait" src="/static/slices/img.png"></image>
                     <view>
                         <view class="aa">
-                            <view>秋名山车神</view>
+                            <view>{{ name }}</view>
                             <image src="/static/slices/icon5.png"></image>
                         </view>
-                        <view class="bb">账号:153003289702</view>
+                        <view class="bb">账号:{{ phone }}</view>
                     </view>
                     <image class="cc" src="/static/slices/icon9.png"></image>
                 </view>
@@ -128,7 +128,33 @@
         </view>
     </view>
 </template>
+<script>
+export default {
+    data() {
+        return { phone:"", name:""}
+    },
+    mounted() {
+        this.getUserInfo()
+    },
+    methods: {
+        getUserInfo() {
+            wx.request({
+                url:"https://freepark.ntmkinc.cn/user",
+                header: {
+                    Accept:"application/json",
+                    Authorization:`Bearer ${wx.getStorageSync('token')}`
+                },
+                success:({data:{phone, name}}) => {
+                    this.phone = phone
+                    this.name = name
+                }
+            })
+        }
+    }
+}
+</script>
 <style>
+
 .header {
     width: 100%;
     height: 552rpx;
