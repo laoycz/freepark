@@ -7,28 +7,25 @@
 			}
 		},
 		{
-			"path": "pages/welcome/index"
+			"path": "pages/home/index"
 		},
 		{
-			"path":"pages/home/index"
+			"path": "pages/park/index"
 		},
 		{
-			"path":"pages/park/index"
+			"path": "pages/activity/index"
 		},
 		{
-			"path":"pages/activity/index"
+			"path": "pages/my/index"
 		},
 		{
-			"path":"pages/my/index"
+			"path": "pages/whole/index"
 		},
 		{
-			"path":"pages/whole/index"
+			"path": "pages/completed/index"
 		},
 		{
-			"path":"pages/completed/index"
-		},
-		{
-			"path":"pages/sign/index"
+			"path": "pages/sign/index"
 		}
 	],
 	"globalStyle": {

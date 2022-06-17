@@ -99,31 +99,31 @@
                     </view>
                 </view>
                 <view class="end">
-            <view class="endd" style="margin-left: 48rpx;">
-                <navigator url="/pages/home/index" open-type="redirect">
-                    <image src="/static/组3180.png"></image>
-                    <view>首页</view>
-                </navigator>
-            </view>
-            <view class="endd" style="margin-left: 62rpx;">
-                <navigator url="/pages/park/index" open-type="redirect">
-                    <image src="/static/home/停车管理.png"></image>
-                    <view>停车场</view>
-                </navigator>
-            </view>
-            <view class="endd" style="margin-left: 62rpx;">
-                <navigator url="/pages/activity/index" open-type="redirect">
-                    <image src="/static/home/活动.png"></image>
-                    <view>活动</view>
-                </navigator>
-            </view>
-            <view class="endd" style="margin-left: 82rpx;">
-                <navigator url="/pages/my/index" open-type="redirect">
-                    <image src="/static/我的.png"></image>
-                    <view style="color: #3366FD;">我的</view>
-                </navigator>
-            </view>
-        </view>
+                    <view class="endd" style="margin-left: 48rpx;">
+                        <navigator url="/pages/home/index" open-type="redirect">
+                            <image src="/static/组3180.png"></image>
+                            <view>首页</view>
+                        </navigator>
+                    </view>
+                    <view class="endd" style="margin-left: 62rpx;">
+                        <navigator url="/pages/park/index" open-type="redirect">
+                            <image src="/static/home/停车管理.png"></image>
+                            <view>停车场</view>
+                        </navigator>
+                    </view>
+                    <view class="endd" style="margin-left: 62rpx;">
+                        <navigator url="/pages/activity/index" open-type="redirect">
+                            <image src="/static/home/活动.png"></image>
+                            <view>活动</view>
+                        </navigator>
+                    </view>
+                    <view class="endd" style="margin-left: 82rpx;">
+                        <navigator url="/pages/my/index" open-type="redirect">
+                            <image src="/static/我的.png"></image>
+                            <view style="color: #3366FD;">我的</view>
+                        </navigator>
+                    </view>
+                </view>
             </view>
         </view>
     </view>
@@ -131,22 +131,29 @@
 <script>
 export default {
     data() {
-        return { phone:"", name:""}
+        return { phone: "", name: "" }
     },
     mounted() {
         this.getUserInfo()
+
     },
     methods: {
         getUserInfo() {
             wx.request({
-                url:"https://freepark.ntmkinc.cn/user",
+                url: "https://freepark.ntmkinc.cn/user",
                 header: {
-                    Accept:"application/json",
-                    Authorization:`Bearer ${wx.getStorageSync('token')}`
+                    Accept: "application/json",
+                    Authorization: `Bearer ${wx.getStorageSync('token')}`
                 },
-                success:({data:{phone, name}}) => {
-                    this.phone = phone
-                    this.name = name
+                success: ({ statusCode, data }) => {
+                    if (statusCode == 200) {
+                        this.phone = data.phone
+                        this.name = data.name
+                    } else if (statusCode == 401) {
+                        wx.redirectTo({
+                            url: "/pages/sign/index"
+                        })
+                    }
                 }
             })
         }
@@ -154,7 +161,6 @@ export default {
 }
 </script>
 <style>
-
 .header {
     width: 100%;
     height: 552rpx;

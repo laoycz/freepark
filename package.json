@@ -44,6 +44,7 @@
     "@dcloudio/uni-mp-toutiao": "3.0.0-alpha-3040720220422002",
     "@dcloudio/uni-mp-weixin": "3.0.0-alpha-3040720220422002",
     "@dcloudio/uni-quickapp-webview": "3.0.0-alpha-3040720220422002",
+    "@dcloudio/uni-ui": "^1.4.16",
     "vue": "^3.2.33",
     "vue-i18n": "^9.1.9",
     "vuex": "^4.0.2"
@@ -54,6 +55,8 @@
     "@dcloudio/uni-cli-shared": "3.0.0-alpha-3040720220422002",
     "@dcloudio/vite-plugin-uni": "3.0.0-alpha-3040720220422002",
     "autoprefixer": "^10.4.2",
+    "sass": "^1.52.3",
+    "sass-loader": "10.1.1",
     "vite": "^2.9.5"
   }
 }
