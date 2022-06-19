@@ -73,9 +73,12 @@
                     </view>
                     <view class="mm">
                         <view style="display: flex;">
-                            <image class="small" src="/static/slices/客服.png"></image>
-                            <view class="eee">我的客服</view>
-                            <image class="nn" src="/static/slices/联合.png"></image>
+                           
+                                <image class="small" src="/static/slices/客服.png"></image>
+                                 <navigator url="/pages/park/create" open-type="redirect">
+                                <view class="eee">我的客服</view></navigator>
+                                <image class="nn" src="/static/slices/联合.png"></image>
+                         
                         </view>
                         <view class="six"></view>
                         <view style="display: flex;margin-top: 40rpx;">

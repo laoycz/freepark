@@ -124,6 +124,7 @@
         </view>
     </view>
 </template>
+
 <style>
 .body {
     background-color: #F3F6FA;

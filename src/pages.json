@@ -26,6 +26,9 @@
 		},
 		{
 			"path": "pages/sign/index"
+		},
+		{
+			"path":"pages/park/create"
 		}
 	],
 	"globalStyle": {
