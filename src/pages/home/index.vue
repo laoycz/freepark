@@ -1,5 +1,5 @@
 <template>
-    <view style="position: relative;background-color: #F3F6FA;height: 1624rpx;">
+    <view style="position: relative;background-color: #F3F6FA;">
         <view style="position:relative">
             <image class="back" src="/static/home/组319.png"></image>
             <view style="position: absolute;left: 0;right: 0; top: 0; bottom: 0;">
@@ -23,49 +23,35 @@
                 </view>
             </view>
         </view>
-        <view style="margin-left:32rpx;">
+        <view style="margin-left:32rpx; padding-bottom: 200rpx;">
             <view class="recommend">车位租聘推荐</view>
             <view class="blue"></view>
-            <view class="border">
-                <view style="display:flex;">
+            <view v-for="park in parks" :key="park.id"
+                @click="openLocation({ latitude: park.lat, longitude: park.lng })" class="border">
+                <view style="display:grid; grid-template-columns: auto auto; justify-content: space-between;">
                     <view>
-                        <view class="black">天山体育馆停车场</view>
-                        <view class="grey">北京市朝阳区天山大街387号天山体育馆</view>
+                        <view class="black">{{ park.name }}</view>
+                        <view class="grey">{{ park.address }}</view>
                     </view>
-                    <view>
-                        <image class="pic" style="margin-left: 124rpx;" src="/static/home/路径.png"></image>
-                        <view class="blee" style="margin-left: 112rpx;">1.8km</view>
-                    </view>
-                </view>
-                <view class="line"></view>
-                <view>
-                    <text class="number" style="margin-left:32rpx;">7:00-22:00</text>
-                    <text class="aaa ccc">营业</text>
-                    <text class="number" style="margin-left:100rpx;">5.0</text>
-                    <text class="aaa ccc">元/小时</text>
-                    <text class="number" style="margin-left:98rpx;">1274</text>
-                    <text class="aaa ccc">空位</text>
-                </view>
-            </view>
-            <view class="border">
-                <view style="display:flex;">
-                    <view>
-                        <view class="black">百货大楼停车场</view>
-                        <view class="grey">北京市东城区王府井大街255号百货大楼B2</view>
-                    </view>
-                    <view>
-                        <image class="pic" style="margin-left: 94rpx;" src="/static/home/路径.png"></image>
-                        <view class="blee" style="margin-left:82rpx;">4.6km</view>
+                    <view style="display: grid; justify-items: center;padding: 0 0 0 25rpx;">
+                        <image class="pic" src="/static/home/路径.png"></image>
+                        <view class="blee">{{ park.distance }}km</view>
                     </view>
                 </view>
                 <view class="line"></view>
-                <view>
-                    <text class="number" style="margin-left:32rpx;">7:00-24:00</text>
-                    <text class="aaa ccc">营业</text>
-                    <text class="number" style="margin-left:100rpx;">8.0</text>
-                    <text class="aaa ccc">元/小时</text>
-                    <text class="number" style="margin-left:114rpx;">152</text>
-                    <text class="aaa ccc">空位</text>
+                <view style="display: grid; grid-template-columns: auto auto auto; justify-content: space-between;">
+                    <view>
+                        <text class="number">{{ park.opening_hours }}</text>
+                        <text class="aaa ccc">营业</text>
+                    </view>
+                    <view>
+                        <text class="number">{{ park.price }}</text>
+                        <text class="aaa ccc">元/小时</text>
+                    </view>
+                    <view>
+                        <text class="number">{{ park.spots_count }}</text>
+                        <text class="aaa ccc">空位</text>
+                    </view>
                 </view>
             </view>
         </view>
@@ -96,9 +82,45 @@
             </view>
         </view>
     </view>
-
-
 </template>
+<script>
+export default {
+    data() {
+        return { parks: [] }
+    },
+    mounted() {
+        wx.getLocation({
+            type: "gcj02",
+            isHighAccuracy: true,
+            success: ({ latitude, longitude }) => {
+                wx.request({
+                    url: "https://freepark.ntmkinc.cn/parks/near",
+                    header: {
+                        Accept: "application/json"
+                    },
+                    data: {
+                        lat: latitude,
+                        lng: longitude
+                    },
+                    success: ({ statusCode, data }) => {
+                        if (statusCode == 200) {
+                            this.parks = data
+                        }
+                    }
+                })
+            }
+        })
+    },
+    methods: {
+        openLocation({ latitude, longitude }) {
+            wx.openLocation({
+                latitude: Number(latitude),
+                longitude: Number(longitude)
+            })
+        }
+    }
+}
+</script>
 <style>
 .back {
     width: 750rpx;
@@ -182,11 +204,10 @@
 }
 
 .border {
-    width: 686rpx;
-    height: 276rpx;
     background-color: #FFFFFF;
     border-radius: 8rpx;
-    margin-top: 24rpx;
+    margin: 24rpx 32rpx 0 0;
+    padding: 45rpx 32rpx;
 }
 
 .end {
@@ -207,21 +228,17 @@
     font-size: 32rpx;
     font-weight: bold;
     color: #121820;
-    padding-top: 50rpx;
-    padding-left: 32rpx;
 }
 
 .grey {
     font-size: 24rpx;
     color: #B4BBC6;
-    margin-left: 32rpx;
     margin-top: 24rpx;
 }
 
 .pic {
     width: 44rpx;
     height: 44rpx;
-    margin-top: 44rpx;
 }
 
 .blee {
@@ -234,7 +251,7 @@
     width: 622rpx;
     border: 2rpx solid #465A88;
     opacity: 0.06;
-    margin: 44rpx 0 15rpx 34rpx;
+    margin: 44rpx 0 15rpx 0;
 }
 
 .number {
