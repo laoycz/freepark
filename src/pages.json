@@ -19,6 +19,9 @@
 			"path": "pages/my/index"
 		},
 		{
+			"path": "pages/my/update"
+		},
+		{
 			"path": "pages/whole/index"
 		},
 		{

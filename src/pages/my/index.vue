@@ -12,7 +12,10 @@
                         </view>
                         <view class="bb">账号:{{ phone }}</view>
                     </view>
-                    <image class="cc" src="/static/slices/icon9.png"></image>
+                    <navigator url="/pages/my/update" open-type="redirect">
+                        <!-- 跳转 更新用户信息页面 -->
+                        <image class="cc" src="/static/slices/icon9.png"></image>
+                    </navigator>
                 </view>
                 <view class="dd">
                     <image src="/static/slices/bg1.png"></image>
