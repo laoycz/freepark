@@ -19,10 +19,10 @@
         </view>
         <view>
             <view class="border" style="margin-top: -80rpx;">
-                <view v-for=" order in orders " :key="order.id" style="margin-left: 32rpx;">
-                    <view>
+                <view v-for=" order in orders " :key="order.id">
+                    <view style="display: grid; grid-template-columns: auto auto;justify-content: space-between;">
                         <text class="text">{{ order.park.name }}</text>
-                        <text class="one in">已完成</text>
+                        <text class="one">已完成</text>
                     </view>
                     <view class="grey" style="margin-top: 24rpx;">小时计费 | {{ order.plate }}</view>
                     <view style="display: flex;align-items: center;margin-top: 48rpx;">
@@ -31,70 +31,16 @@
                         <view class="date">{{ new Date(order.in_at).toLocaleString([], { hour12: false }) }}</view>
                     </view>
                     <view style="display: flex;align-items: center;margin-top: 26rpx;">
-                        <view class="circular orange"></view>
+                        <view class="circular"></view>
                         <view class="grey">出场时间</view>
                         <view class="date">{{ new Date(order.out_at).toLocaleString([], { hour12: false }) }}</view>
                     </view>
                     <view class="line"></view>
-                    <view style="display:flex; margin: 32rpx 0 0 5rpx;">
+                    <view  style="display: grid; grid-template-columns: auto auto;justify-content: space-between;margin: 30rpx 0 0 0;">
                         <view class="date" style="margin-left: -16rpx;">停车{{ calcDuration(order.in_at,order.out_at) }}</view>
-                        <view class="bb" style="margin-left: 318rpx;">
+                        <view class="bb">
                             <view>￥</view>
-                            <text>28.00</text>
-                        </view>
-                    </view>
-                </view>
-            </view>
-            <view class="border" style="margin-top: 32rpx;">
-                <view style="margin-left: 32rpx;">
-                    <view>
-                        <text class="text">百货大楼停车场</text>
-                        <text class="in black" style="margin-left: 326rpx;">已完成</text>
-                    </view>
-                    <view class="grey" style="margin-top: 24rpx;">小时计费 | 京A89887</view>
-                    <view style="display: flex;align-items: center;margin-top: 48rpx;">
-                        <view class="circular aaa"></view>
-                        <view class="grey">进场时间</view>
-                        <view class="date">2022-03-25 07:35:08</view>
-                    </view>
-                    <view style="display: flex;align-items: center;margin-top: 26rpx;">
-                        <view class="circular orange"></view>
-                        <view class="grey">出场时间</view>
-                        <view class="date">2022-03-26 15:42:26</view>
-                    </view>
-                    <view class="line"></view>
-                    <view style="display:flex; margin: 32rpx 0 0 5rpx;">
-                        <view class="date" style="margin-left: -16rpx;">停车1天8小时07分</view>
-                        <view class="bb" style="margin-left: 318rpx;">
-                            <view>￥</view>
-                            <text>28.00</text>
-                        </view>
-                    </view>
-                </view>
-            </view>
-            <view class="border" style="margin-top: 32rpx;">
-                <view style="margin-left: 32rpx;">
-                    <view>
-                        <text class="text">国家游泳中心停车场</text>
-                        <text class="in black" style="margin-left: 262rpx;">已完成</text>
-                    </view>
-                    <view class="grey" style="margin-top: 24rpx;">小时计费 | 京A89887</view>
-                    <view style="display: flex;align-items: center;margin-top: 48rpx;">
-                        <view class="circular aaa"></view>
-                        <view class="grey">进场时间</view>
-                        <view class="date">2022-03-19 12:14:30</view>
-                    </view>
-                    <view style="display: flex;align-items: center;margin-top: 26rpx;">
-                        <view class="circular orange"></view>
-                        <view class="grey">出场时间</view>
-                        <view class="date">2022-03-19 17:58:41</view>
-                    </view>
-                    <view class="line"></view>
-                    <view style="display:flex; margin: 32rpx 0 0 5rpx;">
-                        <view class="date" style="margin-left: -16rpx;">停车5小时40分</view>
-                        <view class="bb" style="margin-left: 356rpx;">
-                            <view>￥</view>
-                            <text>15.00</text>
+                            <text>{{ order.total }}</text>
                         </view>
                     </view>
                 </view>
@@ -128,9 +74,8 @@ export default {
                     }
                 }
             })
-        }
-    },
-    calcDuration(inAt, outAt) {
+        },
+          calcDuration(inAt, outAt) {
         // 停车时间的秒数 = （出场时间 - 进场时间 ）/  1000
         // 1秒 = 1000毫秒
         const duration = (new Date(outAt) - new Date(inAt)) / 1000
@@ -143,6 +88,8 @@ export default {
         const minutes = Math.ceil(duration % 3600 / 60)
         return `${days}天${hours}小时${minutes}分`
     }
+    }
+  
 
 }
 </script>
@@ -188,12 +135,11 @@ export default {
 }
 
 .border {
-    width: 686rpx;
-    height: 386rpx;
     background-color: #FFFFFF;
     border-radius: 24rpx;
-    padding-top: 48rpx;
-    margin-left: 32rpx;
+    padding: 48rpx 38rpx;
+    margin: 0 32rpx;
+
 }
 
 text {
@@ -202,18 +148,14 @@ text {
     color: #121820;
 }
 
-.in {
-    font-size: 24rpx;
-    font-weight: bold;
-}
-
 .black {
     color: #121820;
 }
 
 .one {
     color: #3366FD;
-    margin-left: 294rpx;
+        font-size: 24rpx;
+    font-weight: bold;
 }
 
 .grey {
@@ -246,15 +188,11 @@ text {
     border-radius: 50%;
     display: flex;
     margin-right: 16rpx;
-
+   background-color: #FF6A55;
 }
 
 .aaa {
     background-color: #3366FD;
-}
-
-.orange {
-    background-color: #FF6A55;
 }
 
 .date {
@@ -269,13 +207,5 @@ text {
     height: 0;
     border: 2rpx solid #F3F4F9;
     margin-top: 38rpx;
-}
-
-.money {
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: space-between;
-    margin-top: 36rpx;
-    margin-right: 32rpx;
 }
 </style>

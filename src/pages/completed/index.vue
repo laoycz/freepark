@@ -1,5 +1,5 @@
 <template>
-    <view style="background-color: #F3F6FA; width: 750rpx; height: 1624rpx;">
+    <view style="background-color: #F3F6FA; width: 750rpx;height: 1363rpx;">
         <view class="header">
             <view style="display:flex;padding-top: 50rpx;">
                 <navigator url="/pages/my/index" open-type="redirect">
@@ -10,76 +10,29 @@
         </view>
         <view>
             <view class="border" style="margin-top: -80rpx;">
-                <view style="margin-left: 32rpx;">
-                    <view style="display:flex;align-items:center;">
-                        <text class="text">天山体育馆停车场</text>
-                        <view class="bbb" style="margin-left: 256rpx;">5.00</view>
-                        <view class="ccc">元</view>
+                <view v-for="order in orders" :key="order.id">
+                    <view style="display: grid; grid-template-columns: auto auto; justify-content: space-between;">
+                        <text class="text">{{ order.park.name }}</text>
+                        <view style="display: flex;align-items: center;">
+                            <view class="bbb">{{ order.total }}</view>
+                            <view class="ccc">元</view>
+                        </view>
                     </view>
-                    <view class="grey" style="margin-top: 24rpx;">北京市朝阳区天山大街387号天山体育馆</view>
+                    <view class="grey" style="margin-top: 24rpx;">{{ order.park.address }}</view>
                     <view style="display: flex;align-items: center;margin-top: 48rpx;">
                         <view class="circular aaa"></view>
                         <view class="grey">进场时间</view>
-                        <view class="date">2022-03-28 08:23:16</view>
+                        <view class="date">{{ new Date(order.in_at).toLocaleString([], { hour12: false }) }}</view>
                     </view>
-                    <view style="display: flex;align-items: center;margin-top: 26rpx;">
-                        <view class="circular orange"></view>
-                        <view class="grey">出场时间</view>
-                        <view class="date">2022-03-28 11:02:57</view>
-                    </view>
-                    <view class="line"></view>
-                    <view class="money">
-                        <view class="date" style="margin-left: -10rpx;">停车2小时48分</view>
-                        <view class="ddd">评分</view>
-                    </view>
-                </view>
-            </view>
-            <view class="border" style="margin-top: 32rpx;">
-                <view style="margin-left: 32rpx;">
-                    <view style="display:flex;align-items:flex-end;">
-                        <text class="text">百货大楼停车场</text>
-                        <view class="bbb" style=" margin-left: 266rpx;">28.00</view>
-                        <view class="ccc">元</view>
-                    </view>
-                    <view class="grey" style="margin-top: 24rpx;">北京市东城区王府井大街255号百货大楼B2</view>
                     <view style="display: flex;align-items: center;margin-top: 48rpx;">
-                        <view class="circular aaa"></view>
-                        <view class="grey">进场时间</view>
-                        <view class="date">2022-03-25 07:35:08</view>
-                    </view>
-                    <view style="display: flex;align-items: center;margin-top: 26rpx;">
                         <view class="circular orange"></view>
                         <view class="grey">出场时间</view>
-                        <view class="date">2022-03-26 15:42:26</view>
+                        <view class="date">{{ new Date(order.out_at).toLocaleString([], { hour12: false }) }}</view>
                     </view>
                     <view class="line"></view>
                     <view class="money">
-                        <view class="date" style="margin-left: -10rpx;">停车1天8小时07分</view>
-                        <view class="ddd">评分</view>
-                    </view>
-                </view>
-            </view>
-            <view class="border" style="margin-top: 32rpx;">
-                <view style="margin-left: 32rpx;">
-                    <view style="display:flex;align-items:flex-end;">
-                        <text class="text">国家游泳中心停车场</text>
-                        <view class="bbb" style="margin-left: 202rpx;">15.00</view>
-                        <view class="ccc">元</view>
-                    </view>
-                    <view class="grey" style="margin-top: 24rpx;">北京市朝阳区天辰东路11号国家游泳中心</view>
-                    <view style="display: flex;align-items: center;margin-top: 48rpx;">
-                        <view class="circular aaa"></view>
-                        <view class="grey">进场时间</view>
-                        <view class="date">2022-03-19 12:14:30</view>
-                    </view>
-                    <view style="display: flex;align-items: center;margin-top: 26rpx;">
-                        <view class="circular orange"></view>
-                        <view class="grey">出场时间</view>
-                        <view class="date">2022-03-19 17:58:41</view>
-                    </view>
-                    <view class="line"></view>
-                    <view class="money">
-                        <view class="date" style="margin-left: -10rpx;">停车5小时40分</view>
+                        <view class="date">停车{{ calcDuration(order.in_at, order.out_at) }}
+                        </view>
                         <view class="ddd">评分</view>
                     </view>
                 </view>
@@ -87,6 +40,49 @@
         </view>
     </view>
 </template>
+<script>
+export default {
+    data() {
+        return { orders: [] }
+    },
+    mounted() {
+        this.listOrders()
+    },
+    methods: {
+        listOrders() {
+            wx.request({
+                url: 'https://freepark.ntmkinc.cn/user/orders',
+                header: {
+                    Accept: 'application/json',
+                    Authorization: `Bearer ${wx.getStorageSync('token')}`,
+                },
+                success: ({ statusCode, data }) => {
+                    if (statusCode == 200) {
+                        this.orders = data
+                    } else if (statusCode == 401) {
+                        wx.redirectTo({
+                            url: '/pages/sign/index'
+                        })
+                    }
+                }
+            })
+        },
+        calcDuration(inAt, outAt) {
+
+            const duration = (new Date(outAt) - new Date(inAt)) / 1000
+
+            const days = Math.floor(duration / 86400)
+
+            const hours = Math.floor(duration % 86400 / 3600)
+
+            const minutes = Math.ceil(duration % 3600 / 60)
+            return `${days}天${hours}小时${minutes}分`
+        }
+    }
+
+
+}
+</script>
 <style>
 .header {
     width: 750rpx;
@@ -101,12 +97,10 @@
 }
 
 .border {
-    width: 686rpx;
-    height: 396rpx;
     background-color: #FFFFFF;
     border-radius: 24rpx;
-    padding-top: 48rpx;
-    margin-left: 32rpx;
+    padding: 48rpx 32rpx;
+    margin: 0 32rpx;
 }
 
 text {
@@ -126,7 +120,6 @@ text {
 
 .one {
     color: #3366FD;
-    margin-left: 294rpx;
 }
 
 .grey {
@@ -170,8 +163,7 @@ text {
     display: grid;
     grid-template-columns: auto auto;
     justify-content: space-between;
-    margin-top: 36rpx;
-    margin-right: 32rpx;
+    padding: 45rpx 0 0 0;
 }
 
 .bbb {
