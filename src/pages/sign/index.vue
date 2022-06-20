@@ -2,7 +2,9 @@
     <view>
         <view class="body">
             <view class="header" style="padding: 46rpx 32rpx 122rpx 0">
-                <image style="width: 34rpx; height: 34rpx;" src="/static/sign/close.png "></image>
+                <navigator url="/pages/index/index" open-type="redirect">
+                    <image style="width: 34rpx; height: 34rpx;" src="/static/sign/close.png "></image>
+                </navigator>
             </view>
             <view>
                 <view class="welcome">早上好，</view>
@@ -179,13 +181,13 @@ input {
     display: grid;
     grid-template-columns: auto auto auto;
     justify-content: space-between;
-    margin: 268rpx 166rpx 50rpx 168rpx;
+    padding: 150rpx 60rpx;
 }
 
 .end {
     font-size: 22rpx;
     font-weight: 400;
     color: #B4BBC6;
-    margin-left: 110rpx;
+    margin-left: 70rpx;
 }
 </style>
