@@ -19,28 +19,28 @@
         </view>
         <view>
             <view class="border" style="margin-top: -80rpx;">
-                <view style="margin-left: 32rpx;">
+                <view v-for=" order in orders " :key="order.id" style="margin-left: 32rpx;">
                     <view>
-                        <text class="text">天山体育馆停车场</text>
-                        <text class="one in">进行中</text>
+                        <text class="text">{{ order.park.name }}</text>
+                        <text class="one in">已完成</text>
                     </view>
-                    <view class="grey" style="margin-top: 24rpx;">小时计费 | 京A89887</view>
+                    <view class="grey" style="margin-top: 24rpx;">小时计费 | {{ order.plate }}</view>
                     <view style="display: flex;align-items: center;margin-top: 48rpx;">
                         <view class="circular aaa"></view>
                         <view class="grey">进场时间</view>
-                        <view class="date">2022-03-28 08:23:16</view>
+                        <view class="date">{{ new Date(order.in_at).toLocaleString([], { hour12: false }) }}</view>
                     </view>
                     <view style="display: flex;align-items: center;margin-top: 26rpx;">
                         <view class="circular orange"></view>
                         <view class="grey">出场时间</view>
-                        <view class="date">计费中...</view>
+                        <view class="date">{{ new Date(order.out_at).toLocaleString([], { hour12: false }) }}</view>
                     </view>
                     <view class="line"></view>
                     <view style="display:flex; margin: 32rpx 0 0 5rpx;">
-                        <view class="grey">预估金额</view>
-                        <view class="bb" style="margin-left: 425rpx;">
+                        <view class="date" style="margin-left: -16rpx;">停车{{ calcDuration(order.in_at,order.out_at) }}</view>
+                        <view class="bb" style="margin-left: 318rpx;">
                             <view>￥</view>
-                            <text>5.00</text>
+                            <text>28.00</text>
                         </view>
                     </view>
                 </view>
@@ -102,6 +102,50 @@
         </view>
     </view>
 </template>
+<script>
+export default {
+    data() {
+        return { orders: [] }
+    },
+    mounted() {
+        this.listOrders()
+    },
+    methods: {
+        listOrders() {
+            wx.request({
+                url: 'https://freepark.ntmkinc.cn/user/orders',
+                header: {
+                    Accept: 'application/json',
+                    Authorization: `Bearer ${wx.getStorageSync('token')}`,
+                },
+                success: ({ statusCode, data }) => {
+                    if (statusCode == 200) {
+                        this.orders = data
+                    } else if (statusCode == 401) {
+                        wx.redirectTo({
+                            url: '/pages/sign/index'
+                        })
+                    }
+                }
+            })
+        }
+    },
+    calcDuration(inAt, outAt) {
+        // 停车时间的秒数 = （出场时间 - 进场时间 ）/  1000
+        // 1秒 = 1000毫秒
+        const duration = (new Date(outAt) - new Date(inAt)) / 1000
+        // 一天有60*60*24 =86400秒
+        const days = Math.floor(duration / 86400)
+        // 用 % 取总秒数对 86400 的余数，得到最后一天剩下的秒数
+        // 1小时有 60 * 60 = 3600秒
+        const hours = Math.floor(duration % 86400 / 3600)
+        // 用 % 取总秒数对 3600 的余数， 得到最后一个小时剩下的秒数
+        const minutes = Math.ceil(duration % 3600 / 60)
+        return `${days}天${hours}小时${minutes}分`
+    }
+
+}
+</script>
 <style>
 .blue {
     width: 750rpx;
@@ -176,14 +220,14 @@ text {
     font-size: 24rpx;
     font-weight: 400;
     color: #B4BBC6;
-    
+
 }
 
 .bb {
     display: flex;
     align-items: center;
     color: #282828;
-   
+
 }
 
 .bb view {
