@@ -3,9 +3,20 @@
         <button @click="chooseLocation">选取位置</button>
         <view>{{ name }}</view>
         <view>{{ address }}</view>
-        <input v-model="price" type="nickname" class="uni-input" placeholder="价格" />
-        <input v-model="opening_hours" type="nickname" class="uni-input" placeholder="营业时间" />
-        <input v-model="spots_count" type="nickname" class="uni-input" placeholder="空位" />
+        <view style="padding: 25rpx; background-color: #eee; display: grid; gap: 15rpx; ">
+            <view>
+                <view>价格</view>
+                <input v-model="price" type="text" placeholder="price" />
+            </view>
+            <view>
+                <view>营业时间</view>
+                <input v-model="opening_hours" type="text" placeholder="opening_hours" />
+            </view>
+            <view>
+                <view>空位</view>
+                <input v-model="spots_count" type="text" placeholder="spots_count" />
+            </view>
+        </view>
         <button @click="createPark">创建</button>
     </view>
 </template>
@@ -32,24 +43,30 @@ export default {
                     spots_count: this.spots_count
                 },
                 method: "POST",
-                success:(res)=>{
-                        console.log(res)
+                success: (res) => {
+                    console.log(res)
                 }
             })
 
-    },
-    chooseLocation() {
-        wx.chooseLocation({
-            success: ({ name, address, latitude, longitude }) => {
-                this.name = name
-                this.address = address
-                this.latitude = latitude
-                this.longitude = longitude
-            }
-        })
+        },
+        chooseLocation() {
+            wx.chooseLocation({
+                success: ({ name, address, latitude, longitude }) => {
+                    this.name = name
+                    this.address = address
+                    this.latitude = latitude
+                    this.longitude = longitude
+                }
+            })
+        }
     }
-}
 
 
 }
 </script>
+<style>
+input {
+    background-color: #fff;
+    padding: 15rpx 25rpx;
+}
+</style>

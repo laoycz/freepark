@@ -12,7 +12,9 @@
                         </view>
                         <view class="bb">账号:{{ phone }}</view>
                     </view>
-                    <image class="cc" src="/static/slices/icon9.png"></image>
+                    <navigator url="/pages/my/plate" open-type="redirect">
+                        <image class="cc" src="/static/slices/icon9.png"></image>
+                    </navigator>
                 </view>
                 <view class="dd">
                     <image src="/static/slices/bg1.png"></image>
@@ -73,12 +75,13 @@
                     </view>
                     <view class="mm">
                         <view style="display: flex;">
-                           
-                                <image class="small" src="/static/slices/客服.png"></image>
-                                 <navigator url="/pages/park/create" open-type="redirect">
-                                <view class="eee">我的客服</view></navigator>
-                                <image class="nn" src="/static/slices/联合.png"></image>
-                         
+
+                            <image class="small" src="/static/slices/客服.png"></image>
+                            <navigator url="/pages/park/create" open-type="redirect">
+                                <view class="eee">我的客服</view>
+                            </navigator>
+                            <image class="nn" src="/static/slices/联合.png"></image>
+
                         </view>
                         <view class="six"></view>
                         <view style="display: flex;margin-top: 40rpx;">

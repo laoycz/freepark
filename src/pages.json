@@ -29,6 +29,9 @@
 		},
 		{
 			"path":"pages/park/create"
+		},
+		{
+			"path":"pages/my/plate"
 		}
 	],
 	"globalStyle": {
