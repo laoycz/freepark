@@ -25,6 +25,12 @@
 			"path": "pages/completed/index"
 		},
 		{
+			"path": "pages/completed/rate",
+			"style": {
+				"navigationBarTitleText": "评分"
+			}
+		},
+		{
 			"path": "pages/sign/index"
 		},
 		{
