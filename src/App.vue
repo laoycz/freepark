@@ -12,8 +12,12 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 /*每个页面公共css */
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/utilities';
+
 .end {
   position: fixed;
   bottom: 0;
