@@ -6,15 +6,15 @@
         <view style="padding: 25rpx; background-color: #eee; display: grid; gap: 15rpx; ">
             <view>
                 <view>价格</view>
-                <input v-model="price" type="text" placeholder="price" />
+                <input class="input" v-model="price" type="text" placeholder="price" />
             </view>
             <view>
                 <view>营业时间</view>
-                <input v-model="opening_hours" type="text" placeholder="opening_hours" />
+                <input class="input" v-model="opening_hours" type="text" placeholder="opening_hours" />
             </view>
             <view>
                 <view>空位</view>
-                <input v-model="spots_count" type="text" placeholder="spots_count" />
+                <input class="input" v-model="spots_count" type="text" placeholder="spots_count" />
             </view>
         </view>
         <button @click="createPark">创建</button>
@@ -64,8 +64,9 @@ export default {
 
 }
 </script>
-<style>
-input {
+
+<style scoped>
+.input {
     background-color: #fff;
     padding: 15rpx 25rpx;
 }

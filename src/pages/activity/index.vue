@@ -1,5 +1,5 @@
 <template>
-    <view style="background-color:#F3F6FA; width: 750rpx; height: 1562rpx;">
+    <view class="body" style="background-color:#F3F6FA; width: 750rpx; height: 1562rpx;">
         <view>
             <view class="header">
                 <view style="display:flex; padding-top: 66rpx;">
@@ -29,36 +29,17 @@
                     <view class="black">新户专享|停车优惠 好礼享不停</view>
                 </view>
             </view>
-            <view class="end">
-                <view class="ddd" style="margin-left: 48rpx;">
-                    <navigator url="/pages/home/index" open-type="redirect">
-                        <image src="/static/组3180.png"></image>
-                        <view>首页</view>
-                    </navigator>
-                </view>
-                <view class="ddd" style="margin-left: 62rpx;">
-                    <navigator url="/pages/park/index" open-type="redirect">
-                        <image src="/static/home/停车管理.png"></image>
-                        <view>停车场</view>
-                    </navigator>
-                </view>
-                <view class="ddd" style="margin-left: 62rpx;">
-                    <navigator url="/pages/activity/index" open-type="redirect">
-                        <image src="/static/活动.png"></image>
-                        <view style="color: #3366FD;">活动</view>
-                    </navigator>
-                </view>
-                <view class="ddd" style="margin-left: 82rpx;">
-                    <navigator url="/pages/my/index" open-type="redirect">
-                        <image src="/static/home/我的.png"></image>
-                        <view>我的</view>
-                    </navigator>
-                </view>
-            </view>
+            <Nav page="activity"></Nav>
         </view>
     </view>
 </template>
-<style>
+<script>
+import Nav from "../home/nav.vue";
+export default {
+    components: { Nav }
+}
+</script>
+<style scoped>
 .header {
     width: 750rpx;
     height: 380rpx;
@@ -85,8 +66,7 @@
     grid-template-columns: auto auto auto;
     justify-content: space-between;
 }
-
-text {
+.body {
     font-size: 28rpx;
     font-weight: bold;
     color: #FFFFFF;
@@ -115,33 +95,4 @@ text {
     line-height: 80rpx;
 }
 
-.end {
-    width: 750rpx;
-    height: 166rpx;
-    margin-top: 26rpx;
-    background-color: #FFFFFF;
-    display: flex;
-}
-
-.ddd image {
-    width: 35rpx;
-    height: 34rpx;
-    margin-left: 39rpx;
-}
-
-.ddd view {
-    font-size: 20rpx;
-    color: #121820;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 16rpx;
-}
-
-.ddd {
-    width: 112rpx;
-    height: 67rpx;
-    margin-top: 26rpx;
-}
 </style>

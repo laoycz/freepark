@@ -85,7 +85,7 @@ export default {
 
 }
 </script>
-<style>
+<style scoped>
 .header {
     width: 750rpx;
     height: 238rpx;
@@ -109,19 +109,6 @@ text {
     font-size: 32rpx;
     font-weight: bold;
     color: #121820;
-}
-
-.in {
-    font-size: 24rpx;
-    font-weight: bold;
-}
-
-.black {
-    color: #121820;
-}
-
-.one {
-    color: #3366FD;
 }
 
 .grey {
