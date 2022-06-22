@@ -32,6 +32,9 @@
 		},
 		{
 			"path":"pages/my/plate"
+		},
+		{
+			"path":"pages/completed/score"
 		}
 	],
 	"globalStyle": {

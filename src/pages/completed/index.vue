@@ -33,7 +33,9 @@
                     <view class="money">
                         <view class="date">停车{{ calcDuration(order.in_at, order.out_at) }}
                         </view>
+                        <navigator url="/pages/completed/score" open-type="redirect">
                         <view class="ddd">评分</view>
+                        </navigator>
                     </view>
                 </view>
             </view>
