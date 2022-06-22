@@ -11,7 +11,7 @@
             </view>
             <view>
                 <view>车牌号</view>
-                <input v-model="place" type="text" placeholder="place" />
+                <input v-model="plate" type="text" placeholder="plate" />
             </view>
             <button style="width: 100%;" @click="updateUserInfo">提交</button>
             <navigator url="/pages/my/index" open-type="redirect">

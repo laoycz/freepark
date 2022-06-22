@@ -9,8 +9,8 @@
             </view>
         </view>
         <view>
-            <view class="border" style="margin-top: -80rpx;">
-                <view v-for="order in orders" :key="order.id">
+            <view style="margin-top: -80rpx;">
+                <view class="border" v-for="order in orders" :key="order.id" style="margin-bottom: 50rpx;">
                     <view style="display: grid; grid-template-columns: auto auto; justify-content: space-between;">
                         <text class="text">{{ order.park.name }}</text>
                         <view style="display: flex;align-items: center;">
