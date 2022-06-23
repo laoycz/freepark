@@ -1,6 +1,6 @@
 <template>
-    <view style="background-color:#F3F6FA; width: 750rpx; height: 1724rpx; position: relative;">
-        <view style="position:relative;">
+    <view class="relative" style="background-color:#F3F6FA;">
+        <view class="relative">
             <view>
                 <image class="header" src="/static/slices/bg.png"></image>
                 <view class="ddd">
