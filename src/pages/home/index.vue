@@ -26,7 +26,7 @@
         <view style="padding-bottom: 200rpx;">
             <view class="recommend">车位租聘推荐</view>
             <view class="blue"></view>
-            <Parks></Parks>
+            <Parks :limit="2"></Parks>
         </view>
         <Nav page="home"></Nav>
     </view>

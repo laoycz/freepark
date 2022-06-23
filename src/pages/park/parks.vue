@@ -1,5 +1,5 @@
 <template>
-    <view v-for="park in parks" :key="park.id" class="border"
+    <view v-for="park in limitedParks" :key="park.id" class="border"
         @click="openLocation({ latitude: park.lat, longitude: park.lng })">
         <view style="display:grid; grid-template-columns: auto auto; justify-content: space-between;">
             <view>
@@ -32,8 +32,14 @@
 </template>
 <script>
 export default {
+    props:["limit"],
     data() {
         return { parks: [] }
+    },
+    computed: {
+        limitedParks() {
+            return this.parks.slice(0, this.limit)
+        }
     },
     mounted() {
         wx.getLocation({
