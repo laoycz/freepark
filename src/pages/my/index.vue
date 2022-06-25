@@ -39,7 +39,7 @@
                         <image class="pic" src="/static/slices/icon1.png"></image>
                         <text>进行中</text>
                     </view>
-                    <navigator url="/pages/completed/index" open-type="redirect">
+                    <navigator url="/pages/completed/index">
                         <view>
                             <image class="pic" src="/static/slices/icon3.png"></image>
                             <text>已完成</text>
@@ -104,7 +104,7 @@
                         <view class="six"></view>
                     </view>
                 </view>
-               <Nav page="my"></Nav>
+                <Nav page="my"></Nav>
             </view>
         </view>
     </view>
@@ -148,36 +148,44 @@ export default {
     width: 100%;
     height: 552rpx;
 }
+
 .aa {
     margin-top: 18rpx;
 }
+
 .aa view {
     color: #FFFFFF;
     font-size: 40rpx;
     font-weight: bold;
 }
+
 .aa image {
     width: 25rpx;
     height: 30rpx;
     margin-left: 8rpx;
 }
+
 .cc {
     margin-left: 218rpx;
     margin-top: 18rpx;
 }
+
 .dd {
     top: 325rpx;
     left: 32rpx;
 }
+
 .dd image {
     width: 686rpx;
     height: 368rpx;
     position: relative;
 }
+
 .ee {
     top: 50rpx;
     left: 32rpx;
 }
+
 .bottom {
     width: 144rpx;
     height: 52rpx;
@@ -186,6 +194,7 @@ export default {
     margin-left: 256rpx;
     margin-top: 22rpx;
 }
+
 .part {
     width: 750rpx;
     height: 1202rpx;
@@ -201,11 +210,13 @@ export default {
     font-weight: 400;
     color: #282828;
 }
+
 .pic {
     width: 58rpx;
     height: 66rpx;
     margin: 0 0 22rpx 10rpx;
 }
+
 .ii {
     font-size: 36rpx;
     font-weight: bold;
@@ -248,17 +259,20 @@ export default {
     height: 48rpx;
     margin: 0 0 28rpx 23rpx;
 }
+
 .mm {
     width: 686rpx;
     height: 480rpx;
     background-color: #FFFFFF;
     border-radius: 24rpx;
 }
+
 .nn {
     width: 21rpx;
     height: 21rpx;
     margin-left: 422rpx;
 }
+
 .oo {
     font-size: 28rpx;
     font-weight: 400;

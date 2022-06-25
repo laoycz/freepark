@@ -3,7 +3,10 @@
         @click="openLocation({ latitude: park.lat, longitude: park.lng })">
         <view style="display:grid; grid-template-columns: auto auto; justify-content: space-between;">
             <view>
-                <view class="black">{{ park.name }}</view>
+                <view class="flex justify-between">
+                    <view class="black">{{ park.name }} </view>
+                    <view class="text-red-500">{{ park.score }}</view>
+                </view>
                 <view class="grey">{{ park.address }}</view>
             </view>
             <view style="display: grid;  justify-items: center;padding: 0 0 0 50rpx;">
@@ -32,7 +35,7 @@
 </template>
 <script>
 export default {
-    props:["limit"],
+    props: ["limit"],
     data() {
         return { parks: [] }
     },
@@ -83,6 +86,7 @@ export default {
     margin: 40rpx 32rpx 0 32rpx;
     opacity: 1;
     padding: 35rpx 32rpx;
+    border: 1rpx solid #FFFFFF;
 }
 
 .black {

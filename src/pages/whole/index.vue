@@ -36,8 +36,10 @@
                         <view class="date">{{ new Date(order.out_at).toLocaleString([], { hour12: false }) }}</view>
                     </view>
                     <view class="line"></view>
-                    <view  style="display: grid; grid-template-columns: auto auto;justify-content: space-between;margin: 30rpx 0 0 0;">
-                        <view class="date" style="margin-left: -16rpx;">停车{{ calcDuration(order.in_at,order.out_at) }}</view>
+                    <view
+                        style="display: grid; grid-template-columns: auto auto;justify-content: space-between;margin: 30rpx 0 0 0;">
+                        <view class="date" style="margin-left: -16rpx;">停车{{ calcDuration(order.in_at, order.out_at) }}
+                        </view>
                         <view class="bb">
                             <view>￥</view>
                             <text>{{ order.total }}</text>
@@ -75,21 +77,21 @@ export default {
                 }
             })
         },
-          calcDuration(inAt, outAt) {
-        // 停车时间的秒数 = （出场时间 - 进场时间 ）/  1000
-        // 1秒 = 1000毫秒
-        const duration = (new Date(outAt) - new Date(inAt)) / 1000
-        // 一天有60*60*24 =86400秒
-        const days = Math.floor(duration / 86400)
-        // 用 % 取总秒数对 86400 的余数，得到最后一天剩下的秒数
-        // 1小时有 60 * 60 = 3600秒
-        const hours = Math.floor(duration % 86400 / 3600)
-        // 用 % 取总秒数对 3600 的余数， 得到最后一个小时剩下的秒数
-        const minutes = Math.ceil(duration % 3600 / 60)
-        return `${days}天${hours}小时${minutes}分`
+        calcDuration(inAt, outAt) {
+            // 停车时间的秒数 = （出场时间 - 进场时间 ）/  1000
+            // 1秒 = 1000毫秒
+            const duration = (new Date(outAt) - new Date(inAt)) / 1000
+            // 一天有60*60*24 =86400秒
+            const days = Math.floor(duration / 86400)
+            // 用 % 取总秒数对 86400 的余数，得到最后一天剩下的秒数
+            // 1小时有 60 * 60 = 3600秒
+            const hours = Math.floor(duration % 86400 / 3600)
+            // 用 % 取总秒数对 3600 的余数， 得到最后一个小时剩下的秒数
+            const minutes = Math.ceil(duration % 3600 / 60)
+            return `${days}天${hours}小时${minutes}分`
+        }
     }
-    }
-  
+
 
 }
 </script>
@@ -139,7 +141,7 @@ export default {
     border-radius: 24rpx;
     padding: 48rpx 38rpx;
     margin: 0 32rpx;
-
+    border: 1rpx solid #FFFFFF;
 }
 
 text {
@@ -154,7 +156,7 @@ text {
 
 .one {
     color: #3366FD;
-        font-size: 24rpx;
+    font-size: 24rpx;
     font-weight: bold;
 }
 
@@ -188,7 +190,7 @@ text {
     border-radius: 50%;
     display: flex;
     margin-right: 16rpx;
-   background-color: #FF6A55;
+    background-color: #FF6A55;
 }
 
 .aaa {

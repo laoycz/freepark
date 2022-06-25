@@ -33,8 +33,9 @@
                     <view class="money">
                         <view class="date">停车{{ calcDuration(order.in_at, order.out_at) }}
                         </view>
-                        <navigator url="/pages/completed/score" open-type="redirect">
-                        <view class="ddd">评分</view>
+                        <text v-if="order.score" class="text-xl text-green-500">{{ order.score }}</text>
+                        <navigator v-else :url="`score?id=${order.id}`">
+                            <view class="ddd">评分</view>
                         </navigator>
                     </view>
                 </view>
@@ -101,11 +102,12 @@ export default {
 .border {
     background-color: #FFFFFF;
     border-radius: 24rpx;
+    border: 1rpx solid #FFFFFF;
     padding: 48rpx 32rpx;
     margin: 0 32rpx;
 }
 
-text {
+.text {
     font-size: 32rpx;
     font-weight: bold;
     color: #121820;

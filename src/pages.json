@@ -3,38 +3,68 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "自由停"
 			}
 		},
 		{
-			"path": "pages/home/index"
+			"path": "pages/home/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
 		},
 		{
-			"path": "pages/park/index"
+			"path": "pages/park/index",
+			"style": {
+				"navigationBarTitleText": "停车场"
+			}
 		},
 		{
-			"path": "pages/activity/index"
+			"path": "pages/activity/index",
+			"style": {
+				"navigationBarTitleText": "活动"
+			}
 		},
 		{
-			"path": "pages/my/index"
+			"path": "pages/my/index",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
 		},
 		{
-			"path": "pages/whole/index"
+			"path": "pages/whole/index",
+			"style": {
+				"navigationBarTitleText": "所有订单"
+			}
 		},
 		{
-			"path": "pages/completed/index"
+			"path": "pages/completed/index",
+			"style": {
+				"navigationBarTitleText": "已完成"
+			}
 		},
 		{
-			"path": "pages/sign/index"
+			"path": "pages/sign/index",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
 		},
 		{
-			"path":"pages/park/create"
+			"path": "pages/park/create",
+			"style": {
+				"navigationBarTitleText": "创建车牌"
+			}
 		},
 		{
-			"path":"pages/my/plate"
+			"path": "pages/my/plate",
+			"style": {
+				"navigationBarTitleText": "更新车牌"
+			}
 		},
 		{
-			"path":"pages/completed/score"
+			"path": "pages/completed/score",
+			"style": {
+				"navigationBarTitleText": "评分"
+			}
 		}
 	],
 	"globalStyle": {
