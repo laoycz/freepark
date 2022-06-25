@@ -2,33 +2,33 @@
     <view class="relative" style="background-color:#F3F6FA;">
         <view class="relative">
             <view>
-                <image class="header" src="/static/slices/bg.png"></image>
-                <view class="ddd">
-                    <image class="portrait" src="/static/slices/img.png"></image>
+                <image class="header relative" src="/static/slices/bg.png"></image>
+                <view class="absolute flex left-4 top-16">
+                    <image class="w-16 h-16" src="/static/slices/img.png"></image>
                     <view>
-                        <view class="aa">
+                        <view class="aa flex ml-6">
                             <view>{{ name }}</view>
                             <image src="/static/slices/icon5.png"></image>
                         </view>
-                        <view class="bb">账号:{{ phone }}</view>
+                        <view class="text-white ml-6 mt-3 font-normal text-sm">账号:{{ phone }}</view>
                     </view>
                     <navigator url="/pages/my/plate" open-type="redirect">
-                        <image class="cc" src="/static/slices/icon9.png"></image>
+                        <image class="cc w-5 h-5" src="/static/slices/icon9.png"></image>
                     </navigator>
                 </view>
-                <view class="dd">
+                <view class="dd absolute">
                     <image src="/static/slices/bg1.png"></image>
-                    <view class="ee">
-                        <view class="ff">可用余额(元)</view>
-                        <view style="display:flex;">
-                            <view class="gg">1,392.80</view>
-                            <view class="bottom">充值</view>
+                    <view class="ee absolute font-normal text-white ">
+                        <view class="text-sm">可用余额(元)</view>
+                        <view class="flex">
+                            <view class="text-2xl mt-2">1,392.80</view>
+                            <view class="bottom flex text-sm justify-center items-center rounded-xl">充值</view>
                         </view>
                     </view>
                 </view>
             </view>
-            <view class="part">
-                <view class="hh">
+            <view class="part absolute">
+                <view class="hh grid justify-around grid-cols-4 px-4 py-6 text-sm">
                     <navigator url="/pages/whole/index" open-type="redirect">
                         <view>
                             <image class="pic" src="/static/slices/icon.png"></image>
@@ -73,12 +73,12 @@
                             </view>
                         </view>
                     </view>
-                    <view class="mm">
-                        <view style="display: flex;">
+                    <view class="mm eee pt-6 mt-5">
+                        <view class="flex">
 
                             <image class="small" src="/static/slices/客服.png"></image>
                             <navigator url="/pages/park/create" open-type="redirect">
-                                <view class="eee">我的客服</view>
+                                <view>我的客服</view>
                             </navigator>
                             <image class="nn" src="/static/slices/联合.png"></image>
 
@@ -86,19 +86,19 @@
                         <view class="six"></view>
                         <view style="display: flex;margin-top: 40rpx;">
                             <image class="small" src="/static/slices/icon6.png"></image>
-                            <view class="eee">账号管理</view>
+                            <view>账号管理</view>
                             <image class="nn" src="/static/slices/联合.png"></image>
                         </view>
                         <view class="six"></view>
                         <view style="display: flex;margin-top: 40rpx;">
                             <image class="small" src="/static/slices/icon7.png"></image>
-                            <view class="eee">投诉建议</view>
+                            <view>投诉建议</view>
                             <image class="nn" src="/static/slices/联合.png"></image>
                         </view>
                         <view class="six"></view>
                         <view style="display: flex;margin-top: 40rpx;">
                             <image class="small" src="/static/slices/版本更新.png"></image>
-                            <view class="eee">版本更新</view>
+                            <view>版本更新</view>
                             <view class="oo">v1.0.2</view>
                         </view>
                         <view class="six"></view>
@@ -147,102 +147,46 @@ export default {
 .header {
     width: 100%;
     height: 552rpx;
-    position: relative;
 }
-
-.ddd {
-    position: absolute;
-    display: flex;
-    left: 32rpx;
-    top: 136rpx;
-}
-
 .aa {
-    display: flex;
-    margin-left: 48rpx;
     margin-top: 18rpx;
 }
-
 .aa view {
     color: #FFFFFF;
     font-size: 40rpx;
     font-weight: bold;
 }
-
 .aa image {
     width: 25rpx;
     height: 30rpx;
     margin-left: 8rpx;
 }
-
-.bb {
-    color: #FFFFFF;
-    font-size: 26rpx;
-    font-weight: 400;
-    margin-top: 20rpx;
-    margin-left: 48rpx;
-}
-
 .cc {
-    width: 40rpx;
-    height: 38rpx;
     margin-left: 218rpx;
     margin-top: 18rpx;
 }
-
 .dd {
-    position: absolute;
     top: 325rpx;
     left: 32rpx;
 }
-
 .dd image {
     width: 686rpx;
     height: 368rpx;
     position: relative;
 }
-
 .ee {
-    position: absolute;
     top: 50rpx;
     left: 32rpx;
 }
-
-.ff {
-    font-size: 24rpx;
-    color: #FFFFFF;
-    font-weight: 400;
-}
-
-.gg {
-    font-size: 56rpx;
-    font-weight: 400;
-    color: #FFFFFF;
-    margin-top: 16rpx;
-}
-
-.portrait {
-    width: 128rpx;
-    height: 128rpx;
-}
-
 .bottom {
-    border-radius: 32rpx;
     width: 144rpx;
     height: 52rpx;
     background-color: #FFFFFF;
     color: #3366FD;
-    font-size: 24rpx;
-    font-weight: 400;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-left: 256rpx;
     margin-top: 22rpx;
 }
-
 .part {
-    position: absolute;
     width: 750rpx;
     height: 1202rpx;
     border-radius: 40rpx 40rpx 0 0;
@@ -250,30 +194,18 @@ export default {
     top: 520rpx;
 }
 
-.hh {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    justify-content: center;
-    margin: 48rpx 78rpx 0 82rpx;
-    gap: 90rpx;
-}
-
 .hh view {
     display: grid;
+    justify-content: center;
+    font-size: 24rpx;
+    font-weight: 400;
+    color: #282828;
 }
-
 .pic {
     width: 58rpx;
     height: 66rpx;
     margin: 0 0 22rpx 10rpx;
 }
-
-text {
-    font-size: 24rpx;
-    font-weight: 400;
-    color: #282828;
-}
-
 .ii {
     font-size: 36rpx;
     font-weight: bold;
@@ -304,6 +236,7 @@ text {
     justify-content: center;
     margin: 0 32rpx 0 32rpx;
     gap: 80rpx;
+    font-size: 24rpx;
 }
 
 .ll view {
@@ -315,22 +248,17 @@ text {
     height: 48rpx;
     margin: 0 0 28rpx 23rpx;
 }
-
 .mm {
     width: 686rpx;
     height: 480rpx;
     background-color: #FFFFFF;
     border-radius: 24rpx;
-    margin-top: 40rpx;
-    padding-top: 48rpx;
 }
-
 .nn {
     width: 21rpx;
     height: 21rpx;
     margin-left: 422rpx;
 }
-
 .oo {
     font-size: 28rpx;
     font-weight: 400;
@@ -342,13 +270,14 @@ text {
     width: 26rpx;
     height: 28rpx;
     margin-left: 38rpx;
+    padding-right: 24rpx;
 }
 
 .eee {
     font-size: 28rpx;
     font-weight: 400;
     color: #121820;
-    margin-left: 24rpx;
+
 }
 
 .six {
