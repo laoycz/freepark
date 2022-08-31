@@ -77,9 +77,9 @@
                         <view class="flex">
 
                             <image class="small" src="/static/slices/客服.png"></image>
-                            <navigator url="/pages/park/create" open-type="redirect">
-                                <view>我的客服</view>
-                            </navigator>
+
+                            <view>我的客服</view>
+
                             <image class="nn" src="/static/slices/联合.png"></image>
 
                         </view>
